@@ -20,7 +20,6 @@
     * { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
     body { font-family: 'Inter', sans-serif; background: radial-gradient(circle at top, #020617, #0f172a); color: var(--text); line-height: 1.6; overflow-x: hidden; }
-
     .container { max-width: 1100px; margin: 0 auto; padding: 0 1.5rem; }
 
     header { padding: 4rem 0 6rem; text-align: center; position: relative; }
@@ -31,14 +30,29 @@
 
     section { padding: 4rem 0; }
     .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; }
-    .card { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 1.5rem; padding: 2rem; backdrop-filter: blur(6px); opacity: 0; transform: translateY(20px); animation: fadeInUp 1s forwards; }
-    .card:nth-child(1) { animation-delay: 0.3s; }
-    .card:nth-child(2) { animation-delay: 0.5s; }
-    .card:nth-child(3) { animation-delay: 0.7s; }
-    .card:nth-child(4) { animation-delay: 0.9s; }
+
+    /* Cards */
+    .card {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 1.5rem;
+      padding: 2rem;
+      backdrop-filter: blur(6px);
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 1s forwards;
+      animation-play-state: paused; /* scroll-triggered */
+    }
     .card h3 { font-size: 1.2rem; margin-bottom: 0.75rem; }
     .card p { color: var(--muted); font-size: 0.95rem; }
-    .about { max-width: 750px; margin: 0 auto; text-align: center; opacity: 0; transform: translateY(20px); animation: fadeInUp 1s 1.1s forwards; }
+
+    /* About & FAQ sections for scroll-trigger */
+    .fade-section {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 1s forwards;
+      animation-play-state: paused;
+    }
 
     footer { padding: 3rem 0 2rem; text-align: center; font-size: 0.85rem; color: var(--muted); }
     footer a { color: var(--muted); text-decoration: none; }
@@ -50,7 +64,6 @@
     .sticky-bar { position: fixed; bottom: 20px; left: 50%; transform: translate(-50%, 20px); background: #0f766e; color: #ffffff; padding: 14px 22px; border-radius: 999px; display: flex; align-items: center; gap: 12px; box-shadow: 0 10px 25px rgba(0,0,0,0.15); z-index: 9999; opacity: 0; pointer-events: none; transition: opacity 0.6s ease, transform 0.6s ease; }
     .sticky-bar.show { opacity: 1; pointer-events: auto; transform: translate(-50%, 0); animation: pulseOnce 1.2s ease-out 0.6s 1, fadeInUp 0.6s ease forwards; }
     @keyframes pulseOnce { 0% { box-shadow: 0 10px 25px rgba(0,0,0,0.15); } 50% { box-shadow: 0 10px 35px rgba(15,118,110,0.45); } 100% { box-shadow: 0 10px 25px rgba(0,0,0,0.15); } }
-
     .sticky-secondary { background: rgba(255,255,255,0.15); color: #ffffff; padding: 8px 14px; border-radius: 999px; font-size: 0.9rem; text-decoration: none; transition: background 0.3s ease; }
     .sticky-secondary:hover { background: rgba(255,255,255,0.25); }
 
@@ -68,229 +81,198 @@
     }
   </style>
 
-  <!-- Structured Data for Google Rich Results -->
+  <!-- Structured Data -->
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "MedicalBusiness",
-        "name": "Dr. Lumba Chiropractic",
-        "url": "https://www.drlumba.ca",
-        "logo": "https://www.drlumba.ca/8D252B37-9EA6-4A77-B9AA-A6987D901BE3.jpg",
-        "image": "https://www.drlumba.ca/8D252B37-9EA6-4A77-B9AA-A6987D901BE3.jpg",
-        "description": "Evidence-informed chiropractic care focused on movement quality, injury recovery, and long-term resilience.",
-        "priceRange": "$$",
-        "telephone": "+1-519-555-1234",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "123 Main St",
-          "addressLocality": "Windsor",
-          "addressRegion": "ON",
-          "postalCode": "N8X 1A1",
-          "addressCountry": "CA"
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        { "@type": "MedicalBusiness",
+          "name": "Dr. Lumba Chiropractic",
+          "url": "https://www.drlumba.ca",
+          "logo": "https://www.drlumba.ca/8D252B37-9EA6-4A77-B9AA-A6987D901BE3.jpg",
+          "image": "https://www.drlumba.ca/8D252B37-9EA6-4A77-B9AA-A6987D901BE3.jpg",
+          "description": "Evidence-informed chiropractic care focused on movement quality, injury recovery, and long-term resilience.",
+          "priceRange": "$$",
+          "telephone": "+1-519-555-1234",
+          "address": { "@type": "PostalAddress", "streetAddress": "123 Main St", "addressLocality": "Windsor", "addressRegion": "ON", "postalCode": "N8X 1A1", "addressCountry": "CA" },
+          "geo": { "@type": "GeoCoordinates", "latitude": 42.3149, "longitude": -83.0364 },
+          "areaServed": { "@type": "AdministrativeArea", "name": "Windsor–Essex County" },
+          "medicalSpecialty": "Chiropractic",
+          "sameAs": ["https://beaconphysio.janeapp.com/#/staff_member/40"],
+          "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "37" },
+          "potentialAction": { "@type": "ReserveAction", "target": "https://beaconphysio.janeapp.com/#/staff_member/40", "name": "Book Appointment" },
+          "hasMedicalCondition": [
+            {"@type":"MedicalCondition","name":"Sprains and Strains"},
+            {"@type":"MedicalCondition","name":"Arthritic-related Pain"},
+            {"@type":"MedicalCondition","name":"Motor Vehicle Injuries"},
+            {"@type":"MedicalCondition","name":"Workplace Injuries"}
+          ]
         },
-        "geo": {
-          "@type": "GeoCoordinates",
-          "latitude": 42.3149,
-          "longitude": -83.0364
-        },
-        "areaServed": {
-          "@type": "AdministrativeArea",
-          "name": "Windsor–Essex County"
-        },
-        "medicalSpecialty": "Chiropractic",
-        "sameAs": [
-          "https://beaconphysio.janeapp.com/#/staff_member/40"
-        ],
-        "aggregateRating": {
-          "@type": "AggregateRating",
-          "ratingValue": "4.9",
-          "reviewCount": "37"
-        },
-        "potentialAction": {
-          "@type": "ReserveAction",
-          "target": "https://beaconphysio.janeapp.com/#/staff_member/40",
-          "name": "Book Appointment"
-        },
-        "hasMedicalCondition": [
-          {
-            "@type": "MedicalCondition",
-            "name": "Sprains and Strains",
-            "description": "Mild to moderate soft tissue injuries including muscles, ligaments, and tendons."
-          },
-          {
-            "@type": "MedicalCondition",
-            "name": "Arthritic-related Pain",
-            "description": "Joint discomfort related to osteoarthritis or degenerative conditions."
-          },
-          {
-            "@type": "MedicalCondition",
-            "name": "Motor Vehicle Injuries",
-            "description": "Musculoskeletal injuries sustained from motor vehicle collisions."
-          },
-          {
-            "@type": "MedicalCondition",
-            "name": "Workplace Injuries",
-            "description": "Musculoskeletal injuries sustained in the workplace."
-          }
-        ]
-      },
-      {
-        "@type": "FAQPage",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "Do I need a referral?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "No referral is required. You can book directly online at any time."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "What should I expect at my first visit?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Your first visit focuses on understanding your concerns, movement assessment, and discussing a plan that fits your goals."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Do you treat athletes and active individuals?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Yes. Care is tailored for everyday activity, sport performance, and injury recovery."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Do you accept insurance?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Most extended health plans cover chiropractic care. Coverage varies, so it’s best to confirm with your provider."
-            }
-          }
-        ]
-      }
-    ]
-  }
+        { "@type": "FAQPage",
+          "mainEntity": [
+            {"@type": "Question", "name": "Do I need a referral?", "acceptedAnswer": {"@type":"Answer","text":"No referral is required. You can book directly online at any time."}},
+            {"@type": "Question", "name": "What should I expect at my first visit?", "acceptedAnswer": {"@type":"Answer","text":"Your first visit focuses on understanding your concerns, movement assessment, and discussing a plan that fits your goals."}},
+            {"@type": "Question", "name": "Do you treat athletes and active individuals?", "acceptedAnswer": {"@type":"Answer","text":"Yes. Care is tailored for everyday activity, sport performance, and injury recovery."}},
+            {"@type": "Question", "name": "Do you accept insurance?", "acceptedAnswer": {"@type":"Answer","text":"Most extended health plans cover chiropractic care. Coverage varies, so it’s best to confirm with your provider."}}
+          ]
+        }
+      ]
+    }
   </script>
 </head>
 <body>
 
-  <!-- Sticky Book Now Bar -->
-  <div class="sticky-bar" id="stickyBar">
-    <span>Ready to book?</span>
-    <a href="https://beaconphysio.janeapp.com/#/staff_member/40" target="_blank" rel="noopener noreferrer" class="sticky-cta" id="stickyCta">Book Now</a>
-    <a href="mailto:info@drlumba.ca?subject=New%20Patient%20Inquiry&body=Hello%20Dr.%20Lumba,%0D%0A%0D%0AI%20have%20a%20question%20about%20chiropractic%20care.%0D%0A%0D%0AName:%0D%0APhone:%0D%0A%0D%0AThank%20you," class="sticky-secondary">Questions?</a>
+<!-- Sticky Book Now Bar -->
+<div class="sticky-bar" id="stickyBar">
+  <span>Ready to book?</span>
+  <a href="https://beaconphysio.janeapp.com/#/staff_member/40" target="_blank" rel="noopener noreferrer" class="sticky-cta" id="stickyCta">Book Now</a>
+  <a href="mailto:info@drlumba.ca?subject=New%20Patient%20Inquiry" class="sticky-secondary">Questions?</a>
+</div>
+
+<!-- Header -->
+<header>
+  <div class="container" style="display:grid; grid-template-columns:1fr 1fr; gap:3rem; align-items:center;">
+    <div>
+      <h1>Move with confidence. Recover with intent.</h1>
+      <p>Evidence-informed chiropractic care focused on movement quality, injury recovery, and long-term resilience.</p>
+      <a href="https://beaconphysio.janeapp.com/#/staff_member/40" target="_blank" rel="noopener noreferrer" class="cta" id="mainCta">Book an Appointment</a>
+    </div>
+    <div style="text-align:center;">
+      <div class="hero-image">
+        <img src="/8D252B37-9EA6-4A77-B9AA-A6987D901BE3.jpg" alt="Dr. Lawrence Lumba chiropractic care Windsor ON" loading="lazy"/>
+      </div>
+    </div>
   </div>
+</header>
 
-  <header>
-    <div class="container" style="display:grid; grid-template-columns:1fr 1fr; gap:3rem; align-items:center;">
-      <div>
-        <h1>Move with confidence. Recover with intent.</h1>
-        <p>Evidence-informed chiropractic care focused on movement quality, injury recovery, and long-term resilience.</p>
-        <a href="https://beaconphysio.janeapp.com/#/staff_member/40" target="_blank" rel="noopener noreferrer" class="cta">Book an Appointment</a>
-      </div>
-      <div style="text-align:center;">
-        <div class="hero-image">
-          <img src="/8D252B37-9EA6-4A77-B9AA-A6987D901BE3.jpg" alt="Dr. Lawrence Lumba chiropractic care Windsor ON" loading="lazy"/>
-        </div>
-      </div>
+<!-- Services Section -->
+<section>
+  <div class="container grid">
+    <div class="card" style="animation-delay: 0.3s;">
+      <h3>Evidence-Informed Care</h3>
+      <p>Thorough assessment, informed diagnosis, and care plans grounded in current research and clinical reasoning.</p>
     </div>
-  </header>
-
-  <!-- Services Section -->
-  <section>
-    <div class="container grid">
-      <div class="card">
-        <h3>Evidence-Informed Care</h3>
-        <p>Thorough assessment, informed diagnosis, and care plans grounded in current research and clinical reasoning.</p>
-      </div>
-      <div class="card">
-        <h3>Active Rehabilitation</h3>
-        <p>Targeted mobility and strength work designed to help you move better outside the clinic.</p>
-      </div>
-      <div class="card">
-        <h3>Performance & Recovery</h3>
-        <p>Care for athletes, professionals, and active individuals who want to train, work, and live without limitation.</p>
-      </div>
+    <div class="card" style="animation-delay: 0.5s;">
+      <h3>Active Rehabilitation</h3>
+      <p>Targeted mobility and strength work designed to help you move better outside the clinic.</p>
     </div>
-  </section>
-
-  <!-- Commonly Treated Injuries Section -->
-  <section>
-    <div class="container" style="max-width:900px; margin:0 auto;">
-      <h2 style="text-align:center; font-size:1.75rem; margin-bottom:2rem;">Commonly Treated Injuries</h2>
-      <div class="grid">
-        <div class="card">
-          <h3>Sprains & Strains</h3>
-          <p>Management of mild to moderate soft tissue injuries to muscles, ligaments, and tendons, including rehabilitation and movement education.</p>
-        </div>
-        <div class="card">
-          <h3>Arthritic-Related Pain</h3>
-          <p>Care aimed at improving joint mobility and comfort for individuals experiencing osteoarthritis or degenerative joint conditions.</p>
-        </div>
-        <div class="card">
-          <h3>Motor Vehicle Injuries</h3>
-          <p>Evidence-informed assessment and rehabilitation following minor to moderate musculoskeletal injuries from motor vehicle collisions.</p>
-        </div>
-        <div class="card">
-          <h3>Workplace Injuries</h3>
-          <p>Support for musculoskeletal injuries sustained at work, including posture correction, rehabilitation exercises, and functional recovery guidance.</p>
-        </div>
-      </div>
+    <div class="card" style="animation-delay: 0.7s;">
+      <h3>Performance & Recovery</h3>
+      <p>Care for athletes, professionals, and active individuals who want to train, work, and live without limitation.</p>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- About Section -->
-  <section>
-    <div class="container about">
-      <h2 style="font-size:2rem; margin-bottom:1rem;">About Dr. Lumba</h2>
-      <p style="color: var(--muted);">My approach combines chiropractic, movement assessment, and patient education to help you build long-term resilience and confidence in movement.</p>
+<!-- Commonly Treated Injuries -->
+<section>
+  <div class="container" style="max-width:900px; margin:0 auto;">
+    <h2 style="text-align:center; font-size:1.75rem; margin-bottom:2rem;">Commonly Treated Injuries</h2>
+    <div class="grid">
+      <div class="card" style="animation-delay:0.3s;"><h3>Sprains & Strains</h3><p>Management of mild to moderate soft tissue injuries to muscles, ligaments, and tendons, including rehabilitation and movement education.</p></div>
+      <div class="card" style="animation-delay:0.5s;"><h3>Arthritic-Related Pain</h3><p>Care aimed at improving joint mobility and comfort for individuals experiencing osteoarthritis or degenerative joint conditions.</p></div>
+      <div class="card" style="animation-delay:0.7s;"><h3>Motor Vehicle Injuries</h3><p>Evidence-informed assessment and rehabilitation following minor to moderate musculoskeletal injuries from motor vehicle collisions.</p></div>
+      <div class="card" style="animation-delay:0.9s;"><h3>Workplace Injuries</h3><p>Support for musculoskeletal injuries sustained at work, including posture correction, rehabilitation exercises, and functional recovery guidance.</p></div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- FAQ Section -->
-  <section>
-    <div class="container" style="max-width:700px; margin:0 auto;">
-      <h2 style="text-align:center; font-size:1.75rem; margin-bottom:2rem;">Common questions</h2>
-      <div style="display:grid; gap:1.25rem;">
-        <div>
-          <strong>Do I need a referral?</strong>
-          <p style="color:var(--muted); font-size:0.95rem; margin-top:0.25rem;">No referral is required. You can book directly online at any time.</p>
-        </div>
-        <div>
-          <strong>What should I expect at my first visit?</strong>
-          <p style="color:var(--muted); font-size:0.95rem; margin-top:0.25rem;">Your first visit focuses on understanding your concerns, movement assessment, and discussing a plan that fits your goals.</p>
-        </div>
-        <div>
-          <strong>Do you treat athletes and active individuals?</strong>
-          <p style="color:var(--muted); font-size:0.95rem; margin-top:0.25rem;">Yes. Care is tailored for everyday activity, sport performance, and injury recovery.</p>
-        </div>
-        <div>
-          <strong>Do you accept insurance?</strong>
-          <p style="color:var(--muted); font-size:0.95rem; margin-top:0.25rem;">Most extended health plans cover chiropractic care. Coverage varies, so it’s best to confirm with your provider.</p>
-        </div>
-      </div>
+<!-- About Section -->
+<section class="fade-section" style="animation-delay:1.1s;">
+  <div class="container" style="max-width:750px; margin:0 auto; text-align:center;">
+    <h2 style="font-size:2rem; margin-bottom:1rem;">About Dr. Lumba</h2>
+    <p style="color: var(--muted);">My approach combines chiropractic, movement assessment, and patient education to help you build long-term resilience and confidence in movement.</p>
+  </div>
+</section>
+
+<!-- FAQ Section -->
+<section class="fade-section" style="animation-delay:1.3s;">
+  <div class="container" style="max-width:700px; margin:0 auto;">
+    <h2 style="text-align:center; font-size:1.75rem; margin-bottom:2rem;">Common questions</h2>
+    <div style="display:grid; gap:1.25rem;">
+      <div><strong>Do I need a referral?</strong><p style="color:var(--muted); font-size:0.95rem; margin-top:0.25rem;">No referral is required. You can book directly online at any time.</p></div>
+      <div><strong>What should I expect at my first visit?</strong><p style="color:var(--muted); font-size:0.95rem; margin-top:0.25rem;">Your first visit focuses on understanding your concerns, movement assessment, and discussing a plan that fits your goals.</p></div>
+      <div><strong>Do you treat athletes and active individuals?</strong><p style="color:var(--muted); font-size:0.95rem; margin-top:0.25rem;">Yes. Care is tailored for everyday activity, sport performance, and injury recovery.</p></div>
+      <div><strong>Do you accept insurance?</strong><p style="color:var(--muted); font-size:0.95rem; margin-top:0.25rem;">Most extended health plans cover chiropractic care. Coverage varies, so it’s best to confirm with your provider.</p></div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- Google Reviews Section -->
-  <section>
-    <div class="container" style="max-width:800px; margin:0 auto;">
-      <h2 style="text-align:center; font-size:1.75rem; margin-bottom:2rem;">What Our Patients Say</h2>
-      <div class="grid">
-        <div class="card">
-          <p style="font-style:italic;">"Dr. Lumba is incredibly thorough and attentive. My recovery has been smooth and effective."</p>
-          <p style="color:var(--muted); font-size:0.85rem; margin-top:0.5rem;">– Jane D.</p>
-        </div>
-        <div class="card">
-          <p style="font-style:italic;">"Highly professional and knowledgeable. I feel confident moving again after my injury."</p>
-          <p style="color:var(--muted); font-size:0.85rem; margin-top:0.5rem;">– Mark R.</p>
-        </div>
-        <div class="card">
-          <p style="font-style:italic;">"Friendly, evidence-based care that really works. The exercises and advice are practical."</p>
-          <p style="color:var(--muted); font-size:0.85rem; margin-top:0.5rem;">– Lisa W.</p>
-        </div>
+<!-- Google Reviews Section -->
+<section>
+  <div class="container" style="max-width:800px; margin:0 auto;">
+    <h2 style="text-align:center; font-size:1.75rem; margin-bottom:2rem;">What Our Patients Say</h2>
+    <div class="grid">
+      <div class="card" style="animation-delay:0.3s;"><p style="font-style:italic;">"Dr. Lumba is incredibly thorough and attentive. My recovery has been smooth and effective."</p><p style="color:var(--muted); font-size:0.85rem; margin-top:0.5rem;">– Jane D.</p></div>
+      <div class="card" style="animation-delay:0.5s;"><p style="font-style:italic;">"Highly professional and knowledgeable. I feel confident moving again after my injury."</p><p style="color:var(--muted); font-size:0.85rem; margin-top:0.5rem;">– Mark R.</p></div>
+      <div class="card" style="animation-delay:0.7s;"><p style="font-style:italic;">"Friendly, evidence-based care that really works. The exercises and advice are practical."</p><p style="color:var(--muted); font-size:0.85rem; margin-top:0.5rem;">– Lisa W.</p></div>
+    </div>
+    <p style="text-align:center; margin-top:1.5rem;"><a href="https://www.google.com/maps/place/Dr.+Lumba+Chiropractic" target="_blank" rel="noopener noreferrer" style="color:var(--accent); text-decoration:underline;">See more reviews on Google</a></p>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="container">
+    <p>© <span id="year"></span> Dr. Lumba Chiropractic · Windsor / Tecumseh</p>
+    <p><a href="mailto:info@drlumba.ca">info@drlumba.ca</a></p>
+  </div>
+</footer>
+
+<!-- Scripts -->
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Sticky bar
+  const stickyCta = document.getElementById('stickyCta');
+  const stickyBar = document.getElementById('stickyBar');
+  const mainCta = document.getElementById('mainCta');
+
+  if (!localStorage.getItem('stickyBarDismissed')) {
+    const showAfterScroll = () => {
+      const scrollPercent = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
+      if (scrollPercent > 25) {
+        stickyBar.classList.add('show');
+        window.removeEventListener('scroll', showAfterScroll);
+      }
+    };
+    window.addEventListener('scroll', showAfterScroll);
+  }
+
+  const bookNowClick = () => {
+    stickyBar.classList.remove('show');
+    localStorage.setItem('stickyBarDismissed', 'true');
+
+    // Google Ads Conversion Tracking
+    if (typeof gtag === 'function') {
+      gtag('event', 'conversion', {'send_to': 'AW-CONVERSION_ID/BOOK_NOW'});
+    }
+  };
+
+  stickyCta.addEventListener('click', bookNowClick);
+  mainCta.addEventListener('click', bookNowClick);
+
+  // Scroll-trigger animations
+  const fadeElements = document.querySelectorAll('.card, .fade-section');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting) {
+        entry.target.style.animationPlayState = 'running';
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+
+  fadeElements.forEach(el => observer.observe(el));
+</script>
+
+<!-- Google Ads Global Site Tag -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-CONVERSION_ID"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-CONVERSION_ID');
+</script>
+
+</body>
+</html>
