@@ -17,8 +17,8 @@
       --muted: #c7c3bb;
       --accent: #1fbfa7;
     }
+
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
     body { font-family: 'Inter', sans-serif; background: radial-gradient(circle at top, #020617, #0f172a); color: var(--text); line-height: 1.6; overflow-x: hidden; }
     .container { max-width: 1100px; margin: 0 auto; padding: 0 1.5rem; }
 
@@ -30,29 +30,13 @@
 
     section { padding: 4rem 0; }
     .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; }
-
-    /* Cards */
-    .card {
-      background: rgba(255,255,255,0.03);
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 1.5rem;
-      padding: 2rem;
-      backdrop-filter: blur(6px);
-      opacity: 0;
-      transform: translateY(20px);
-      animation: fadeInUp 1s forwards;
-      animation-play-state: paused; /* scroll-triggered */
-    }
+    .card { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 1.5rem; padding: 2rem; backdrop-filter: blur(6px); opacity: 0; transform: translateY(20px); animation: fadeInUp 1s forwards; }
+    .card:nth-child(1) { animation-delay: 0.3s; }
+    .card:nth-child(2) { animation-delay: 0.5s; }
+    .card:nth-child(3) { animation-delay: 0.7s; }
     .card h3 { font-size: 1.2rem; margin-bottom: 0.75rem; }
     .card p { color: var(--muted); font-size: 0.95rem; }
-
-    /* About & FAQ sections for scroll-trigger */
-    .fade-section {
-      opacity: 0;
-      transform: translateY(20px);
-      animation: fadeInUp 1s forwards;
-      animation-play-state: paused;
-    }
+    .about { max-width: 750px; margin: 0 auto; text-align: center; opacity: 0; transform: translateY(20px); animation: fadeInUp 1s 0.9s forwards; }
 
     footer { padding: 3rem 0 2rem; text-align: center; font-size: 0.85rem; color: var(--muted); }
     footer a { color: var(--muted); text-decoration: none; }
@@ -60,123 +44,59 @@
 
     @keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
 
-    /* Sticky booking bar */
-    .sticky-bar { position: fixed; bottom: 20px; left: 50%; transform: translate(-50%, 20px); background: #0f766e; color: #ffffff; padding: 14px 22px; border-radius: 999px; display: flex; align-items: center; gap: 12px; box-shadow: 0 10px 25px rgba(0,0,0,0.15); z-index: 9999; opacity: 0; pointer-events: none; transition: opacity 0.6s ease, transform 0.6s ease; }
-    .sticky-bar.show { opacity: 1; pointer-events: auto; transform: translate(-50%, 0); animation: pulseOnce 1.2s ease-out 0.6s 1, fadeInUp 0.6s ease forwards; }
-    @keyframes pulseOnce { 0% { box-shadow: 0 10px 25px rgba(0,0,0,0.15); } 50% { box-shadow: 0 10px 35px rgba(15,118,110,0.45); } 100% { box-shadow: 0 10px 25px rgba(0,0,0,0.15); } }
-    .sticky-secondary { background: rgba(255,255,255,0.15); color: #ffffff; padding: 8px 14px; border-radius: 999px; font-size: 0.9rem; text-decoration: none; transition: background 0.3s ease; }
-    .sticky-secondary:hover { background: rgba(255,255,255,0.25); }
-
-/* Mobile sticky "Book" button */
-.mobile-sticky-cta {
-  position: fixed;
-  bottom: 20px; /* lower button */
-  left: 50%;
-  transform: translateX(-50%);
-  background: var(--accent);
-  color: #020617;
-  padding: 12px 20px;
-  border-radius: 999px;
-  font-weight: 600;
-  text-decoration: none;
-  text-align: center;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-  z-index: 9999;
-  transition: transform 0.3s ease, opacity 0.3s ease;
-  display: none; /* show after scroll */
-}
-.mobile-sticky-cta.show { display: block; opacity: 1; }
-
-/* Mobile sticky "Contact" button */
-.mobile-sticky-contact {
-  position: fixed;
-  bottom: 80px; /* top button */
-  left: 50%;
-  transform: translateX(-50%);
-  background: rgba(255,255,255,0.15);
-  color: #ffffff;
-  padding: 10px 18px;
-  border-radius: 999px;
-  font-weight: 600;
-  text-decoration: none;
-  text-align: center;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-  z-index: 9999;
-  transition: transform 0.3s ease, opacity 0.3s ease;
-  display: none; /* show after scroll */
-}
-.mobile-sticky-contact.show { display: block; opacity: 1; }
-
-@media (max-width: 768px) {
-  /* Ensure both buttons are visible on small screens */
-  .mobile-sticky-cta { display: block; }
-  .mobile-sticky-contact { display: block; }
-}
-
-
-    /* Hero image polish */
+    /* Hero image */
     .hero-image { position: relative; border-radius: 1.75rem; overflow: hidden; box-shadow: 0 30px 60px rgba(0,0,0,0.45); }
     .hero-image img { width: 100%; height: auto; display: block; filter: saturate(0.9) contrast(1.05); opacity: 0; transform: translateY(8px); animation: heroFadeIn 0.6s ease-out forwards; }
     @keyframes heroFadeIn { to { opacity: 1; transform: translateY(0); } }
     .hero-image::after { content: ""; position: absolute; inset: 0; background: linear-gradient(135deg, rgba(6,46,42,0.25), rgba(6,46,42,0)); pointer-events: none; }
 
+    /* Desktop sticky bar */
+    .sticky-bar { position: fixed; bottom: 20px; left: 50%; transform: translate(-50%, 20px); background: #0f766e; color: #ffffff; padding: 14px 22px; border-radius: 999px; display: flex; align-items: center; gap: 12px; box-shadow: 0 10px 25px rgba(0,0,0,0.15); z-index: 9999; opacity: 0; pointer-events: none; transition: opacity 0.6s ease, transform 0.6s ease; }
+    .sticky-bar.show { opacity: 1; pointer-events: auto; transform: translate(-50%, 0); animation: pulseOnce 1.2s ease-out 0.6s 1; }
+    @keyframes pulseOnce { 0% { box-shadow: 0 10px 25px rgba(0,0,0,0.15); } 50% { box-shadow: 0 10px 35px rgba(15,118,110,0.45); } 100% { box-shadow: 0 10px 25px rgba(0,0,0,0.15); } }
+    .sticky-secondary { background: rgba(255,255,255,0.15); color: #ffffff; padding: 8px 14px; border-radius: 999px; font-size: 0.9rem; text-decoration: none; transition: background 0.3s ease; }
+    .sticky-secondary:hover { background: rgba(255,255,255,0.25); }
+
+    /* Hide desktop sticky bar on mobile */
     @media (max-width: 768px) {
+      .sticky-bar { display: none !important; }
       header .container { grid-template-columns: 1fr; }
       .hero-image { margin-top: 2rem; }
     }
+
+    /* Mobile sticky buttons */
+    .mobile-sticky-cta, .mobile-sticky-contact {
+      position: fixed;
+      left: 50%;
+      transform: translateX(-50%);
+      border-radius: 999px;
+      font-weight: 600;
+      text-decoration: none;
+      text-align: center;
+      z-index: 9999;
+      opacity: 0;
+      pointer-events: none;
+      transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+    .mobile-sticky-cta { bottom: 20px; background: var(--accent); color: #020617; padding: 12px 20px; box-shadow: 0 10px 25px rgba(0,0,0,0.2); }
+    .mobile-sticky-contact { bottom: 80px; background: rgba(255,255,255,0.15); color: #ffffff; padding: 10px 18px; box-shadow: 0 8px 20px rgba(0,0,0,0.2); }
+    .mobile-sticky-cta.show, .mobile-sticky-contact.show { opacity: 1; pointer-events: auto; }
   </style>
 
-  <!-- Structured Data -->
-  <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@graph": [
-        { "@type": "MedicalBusiness",
-          "name": "Dr. Lumba Chiropractic",
-          "url": "https://www.drlumba.ca",
-          "logo": "https://www.drlumba.ca/8D252B37-9EA6-4A77-B9AA-A6987D901BE3.jpg",
-          "image": "https://www.drlumba.ca/8D252B37-9EA6-4A77-B9AA-A6987D901BE3.jpg",
-          "description": "Evidence-informed chiropractic care focused on movement quality, injury recovery, and long-term resilience.",
-          "priceRange": "$$",
-          "telephone": "+1-519-555-1234",
-          "address": { "@type": "PostalAddress", "streetAddress": "123 Main St", "addressLocality": "Windsor", "addressRegion": "ON", "postalCode": "N8X 1A1", "addressCountry": "CA" },
-          "geo": { "@type": "GeoCoordinates", "latitude": 42.3149, "longitude": -83.0364 },
-          "areaServed": { "@type": "AdministrativeArea", "name": "Windsor–Essex County" },
-          "medicalSpecialty": "Chiropractic",
-          "sameAs": ["https://beaconphysio.janeapp.com/#/staff_member/40"],
-          "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "37" },
-          "potentialAction": { "@type": "ReserveAction", "target": "https://beaconphysio.janeapp.com/#/staff_member/40", "name": "Book Appointment" },
-          "hasMedicalCondition": [
-            {"@type":"MedicalCondition","name":"Sprains and Strains"},
-            {"@type":"MedicalCondition","name":"Arthritic-related Pain"},
-            {"@type":"MedicalCondition","name":"Motor Vehicle Injuries"},
-            {"@type":"MedicalCondition","name":"Workplace Injuries"}
-          ]
-        },
-        { "@type": "FAQPage",
-          "mainEntity": [
-            {"@type": "Question", "name": "Do I need a referral?", "acceptedAnswer": {"@type":"Answer","text":"No referral is required. You can book directly online at any time."}},
-            {"@type": "Question", "name": "What should I expect at my first visit?", "acceptedAnswer": {"@type":"Answer","text":"Your first visit focuses on understanding your concerns, movement assessment, and discussing a plan that fits your goals."}},
-            {"@type": "Question", "name": "Do you treat athletes and active individuals?", "acceptedAnswer": {"@type":"Answer","text":"Yes. Care is tailored for everyday activity, sport performance, and injury recovery."}},
-            {"@type": "Question", "name": "Do you accept insurance?", "acceptedAnswer": {"@type":"Answer","text":"Most extended health plans cover chiropractic care. Coverage varies, so it’s best to confirm with your provider."}}
-          ]
-        }
-      ]
-    }
-  </script>
 </head>
 <body>
 
-<!-- Sticky Book Now Bar -->
-<div class="sticky-bar" id="stickyBar">
-  <span>Ready to book?</span>
-  <a href="https://beaconphysio.janeapp.com/#/staff_member/40" target="_blank" rel="noopener noreferrer" class="sticky-cta" id="stickyCta">Book Now</a>
-  <a href="mailto:info@drlumba.ca?subject=New%20Patient%20Inquiry" class="sticky-secondary">Questions?</a>
-</div>
+  <!-- Desktop Sticky Bar -->
+  <div class="sticky-bar" id="stickyBar">
+    <span>Ready to book?</span>
+    <a href="https://beaconphysio.janeapp.com/#/staff_member/40" target="_blank" rel="noopener noreferrer" class="sticky-cta" id="stickyCta">Book Now</a>
+    <a href="mailto:info@drlumba.ca?subject=New%20Patient%20Inquiry" class="sticky-secondary">Questions?</a>
+  </div>
 
-<!-- Mobile Sticky Buttons -->
-<a href="https://beaconphysio.janeapp.com/#/staff_member/40" target="_blank" rel="noopener noreferrer" class="mobile-sticky-cta" id="mobileCta">Book an Appointment</a>
-<a href="mailto:info@drlumba.ca?subject=Quick%20Inquiry&body=Hello%20Dr.%20Lumba,%0D%0A%0D%0AI%20would%20like%20to%20get%20in%20touch%20regarding%20chiropractic%20care.%0D%0A%0D%0AThank%20you," class="mobile-sticky-contact" id="mobileContact">Contact</a>
+  <!-- Mobile Sticky Buttons -->
+  <a href="https://beaconphysio.janeapp.com/#/staff_member/40" class="mobile-sticky-cta" id="mobileCta">Book an Appointment</a>
+  <a href="#contactSection" class="mobile-sticky-contact" id="mobileContact">Contact</a>
+
   <!-- Header / Hero -->
   <header>
     <div class="container" style="display:grid; grid-template-columns:1fr 1fr; gap:3rem; align-items:center;">
@@ -196,15 +116,15 @@
   <!-- Services Section -->
   <section>
     <div class="container grid">
-      <div class="card fade-section">
+      <div class="card">
         <h3>Evidence-Informed Care</h3>
         <p>Thorough assessment, informed diagnosis, and care plans grounded in current research and clinical reasoning.</p>
       </div>
-      <div class="card fade-section">
+      <div class="card">
         <h3>Active Rehabilitation</h3>
         <p>Targeted mobility and strength work designed to help you move better outside the clinic.</p>
       </div>
-      <div class="card fade-section">
+      <div class="card">
         <h3>Performance & Recovery</h3>
         <p>Care for athletes, professionals, and active individuals who want to train, work, and live without limitation.</p>
       </div>
@@ -213,7 +133,7 @@
 
   <!-- Commonly Treated Injuries -->
   <section>
-    <div class="container fade-section" style="max-width:750px; margin:0 auto; text-align:center;">
+    <div class="container" style="max-width:750px; margin:0 auto; text-align:center;">
       <h2 style="font-size:2rem; margin-bottom:1rem;">Commonly Treated Injuries</h2>
       <p style="color: var(--muted); font-size:1rem; margin-bottom:2rem;">We provide chiropractic care for a wide range of conditions including:</p>
       <ul style="list-style:none; color:var(--text); font-size:1rem; padding:0;">
@@ -227,7 +147,7 @@
 
   <!-- About Section -->
   <section>
-    <div class="container about fade-section">
+    <div class="container about">
       <h2 style="font-size:2rem; margin-bottom:1rem;">About Dr. Lumba</h2>
       <p style="color: var(--muted);">My approach combines chiropractic, movement assessment, and patient education to help you build long-term resilience and confidence in movement.</p>
     </div>
@@ -235,7 +155,7 @@
 
   <!-- FAQ Section -->
   <section>
-    <div class="container fade-section" style="max-width:700px; margin:0 auto;">
+    <div class="container" style="max-width:700px; margin:0 auto;">
       <h2 style="text-align:center; font-size:1.75rem; margin-bottom:2rem;">Common questions</h2>
       <div style="display:grid; gap:1.25rem;">
         <div>
@@ -260,7 +180,7 @@
 
   <!-- Google Reviews Section -->
   <section>
-    <div class="container fade-section" style="max-width:700px; margin:0 auto; text-align:center;">
+    <div class="container" style="max-width:700px; margin:0 auto; text-align:center;">
       <h2 style="font-size:1.75rem; margin-bottom:2rem;">What our patients say</h2>
       <div style="display:grid; gap:1.5rem;">
         <div style="background: rgba(255,255,255,0.05); padding:1.5rem; border-radius:1rem;">
@@ -272,10 +192,19 @@
           <p style="color:var(--muted); font-size:0.85rem; margin-top:0.5rem;">– Michael S.</p>
         </div>
         <div style="background: rgba(255,255,255,0.05); padding:1.5rem; border-radius:1rem;">
-          <p>"Highly recommend! The treatment plan was easy to follow and very effective."</p>
+          <p>"Highly recommend for anyone recovering from injury or looking to improve movement."</p>
           <p style="color:var(--muted); font-size:0.85rem; margin-top:0.5rem;">– Sarah T.</p>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- Contact Section Anchor -->
+  <section id="contactSection">
+    <div class="container" style="max-width:700px; margin:2rem auto; text-align:center;">
+      <h2 style="font-size:1.75rem; margin-bottom:1rem;">Contact Us</h2>
+      <p style="color: var(--muted);">Tap the button below to email us directly—no typing required.</p>
+      <a href="mailto:info@drlumba.ca?subject=New%20Patient%20Inquiry" style="display:inline-block; margin-top:1rem; background:var(--accent); color:#020617; padding:12px 20px; border-radius:999px; font-weight:600; text-decoration:none;">Email Us</a>
     </div>
   </section>
 
@@ -287,57 +216,58 @@
     </div>
   </footer>
 
-  <!-- Scripts -->
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    const stickyCta = document.getElementById('stickyCta');
     const stickyBar = document.getElementById('stickyBar');
+    const stickyCta = document.getElementById('stickyCta');
     const mainCta = document.getElementById('mainCta');
     const mobileCta = document.getElementById('mobileCta');
     const mobileContact = document.getElementById('mobileContact');
 
-    // Show sticky/mobile buttons after scroll
-    if (!localStorage.getItem('stickyBarDismissed')) {
-      const showAfterScroll = () => {
-        const scrollPercent = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
-        if (scrollPercent > 25) {
+    const isDesktop = window.innerWidth > 768;
+
+    // Desktop sticky bar scroll
+    if (isDesktop && !localStorage.getItem('stickyBarDismissed')) {
+      const showDesktopBar = () => {
+        if ((window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100 > 25) {
           stickyBar.classList.add('show');
-          mobileCta.classList.add('show');
-          mobileContact.classList.add('show');
-          window.removeEventListener('scroll', showAfterScroll);
+          window.removeEventListener('scroll', showDesktopBar);
         }
       };
-      window.addEventListener('scroll', showAfterScroll);
+      window.addEventListener('scroll', showDesktopBar);
     }
 
-    // Track booking conversions
+    // Mobile buttons scroll
+    if (!localStorage.getItem('mobileStickyDismissed')) {
+      const showMobileButtons = () => {
+        if ((window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100 > 25) {
+          mobileCta.classList.add('show');
+          mobileContact.classList.add('show');
+          window.removeEventListener('scroll', showMobileButtons);
+        }
+      };
+      window.addEventListener('scroll', showMobileButtons);
+    }
+
     const trackBooking = () => {
-      stickyBar.classList.remove('show');
       mobileCta.classList.remove('show');
-      localStorage.setItem('stickyBarDismissed', 'true');
+      mobileContact.classList.remove('show');
+      localStorage.setItem('mobileStickyDismissed', 'true');
       if (typeof gtag === 'function') {
         gtag('event', 'conversion', {'send_to': 'AW-CONVERSION_ID/BOOK_NOW'});
       }
     };
-    stickyCta.addEventListener('click', trackBooking);
+
     mainCta.addEventListener('click', trackBooking);
     mobileCta.addEventListener('click', trackBooking);
-
-    // Scroll-triggered fade-in animations
-    const fadeElements = document.querySelectorAll('.card, .fade-section');
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if(entry.isIntersecting) {
-          entry.target.style.animationPlayState = 'running';
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.15 });
-    fadeElements.forEach(el => observer.observe(el));
+    stickyCta.addEventListener('click', () => {
+      stickyBar.classList.remove('show');
+      localStorage.setItem('stickyBarDismissed', 'true');
+    });
   </script>
 
-  <!-- Google Ads Global Site Tag -->
+  <!-- Google Ads Conversion Tracking -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=AW-CONVERSION_ID"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
