@@ -18,197 +18,57 @@
       --accent: #22c55e;
     }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Inter', sans-serif; background: radial-gradient(circle at top, #020617, #0f172a); color: var(--text); line-height: 1.6; overflow-x: hidden; }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 1.5rem; }
 
-    body {
-      font-family: 'Inter', sans-serif;
-      background: radial-gradient(circle at top, #020617, #0f172a);
-      color: var(--text);
-      line-height: 1.6;
-      overflow-x: hidden;
-    }
+    header { padding: 4rem 0 6rem; text-align: center; position: relative; }
+    header h1 { font-size: clamp(2.5rem, 5vw, 3.5rem); font-weight: 700; letter-spacing: -0.02em; margin-bottom: 1rem; opacity: 0; transform: translateY(20px); animation: fadeInUp 1s forwards; }
+    header p { font-size: 1.1rem; color: var(--muted); max-width: 650px; margin: 0 auto 2.5rem; opacity: 0; transform: translateY(20px); animation: fadeInUp 1s 0.3s forwards; }
 
-    .container {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 0 1.5rem;
-    }
+    .cta { display: inline-block; background: var(--accent); color: #020617; padding: 0.9rem 1.8rem; border-radius: 999px; font-weight: 600; text-decoration: none; transition: transform 0.15s ease, box-shadow 0.15s ease; }
 
-    header {
-      padding: 4rem 0 6rem;
-      text-align: center;
-      position: relative;
-    }
-
-    header h1 {
-      font-size: clamp(2.5rem, 5vw, 3.5rem);
-      font-weight: 700;
-      letter-spacing: -0.02em;
-      margin-bottom: 1rem;
-      opacity: 0;
-      transform: translateY(20px);
-      animation: fadeInUp 1s forwards;
-    }
-
-    header p {
-      font-size: 1.1rem;
-      color: var(--muted);
-      max-width: 650px;
-      margin: 0 auto 2.5rem;
-      opacity: 0;
-      transform: translateY(20px);
-      animation: fadeInUp 1s 0.3s forwards;
-    }
-
-    .cta {
-      display: inline-block;
-      background: var(--accent);
-      color: #020617;
-      padding: 0.9rem 1.8rem;
-      border-radius: 999px;
-      font-weight: 600;
-      text-decoration: none;
-      transition: transform 0.15s ease, box-shadow 0.15s ease;
-    }
-
-    .cta:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 10px 30px rgba(34,197,94,0.25);
-    }
-
-    section {
-      padding: 4rem 0;
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 2rem;
-    }
-
-    .card {
-      background: rgba(255,255,255,0.03);
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 1.5rem;
-      padding: 2rem;
-      backdrop-filter: blur(6px);
-      opacity: 0;
-      transform: translateY(20px);
-      animation: fadeInUp 1s forwards;
-    }
-
+    section { padding: 4rem 0; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; }
+    .card { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 1.5rem; padding: 2rem; backdrop-filter: blur(6px); opacity: 0; transform: translateY(20px); animation: fadeInUp 1s forwards; }
     .card:nth-child(1) { animation-delay: 0.3s; }
     .card:nth-child(2) { animation-delay: 0.5s; }
     .card:nth-child(3) { animation-delay: 0.7s; }
+    .card h3 { font-size: 1.2rem; margin-bottom: 0.75rem; }
+    .card p { color: var(--muted); font-size: 0.95rem; }
+    .about { max-width: 750px; margin: 0 auto; text-align: center; opacity: 0; transform: translateY(20px); animation: fadeInUp 1s 0.9s forwards; }
 
-    .card h3 {
-      font-size: 1.2rem;
-      margin-bottom: 0.75rem;
-    }
+    footer { padding: 3rem 0 2rem; text-align: center; font-size: 0.85rem; color: var(--muted); }
+    footer a { color: var(--muted); text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
 
-    .card p {
-      color: var(--muted);
-      font-size: 0.95rem;
-    }
-
-    .about {
-      max-width: 750px;
-      margin: 0 auto;
-      text-align: center;
-      opacity: 0;
-      transform: translateY(20px);
-      animation: fadeInUp 1s 0.9s forwards;
-    }
-
-    footer {
-      padding: 3rem 0 2rem;
-      text-align: center;
-      font-size: 0.85rem;
-      color: var(--muted);
-    }
-
-    footer a {
-      color: var(--muted);
-      text-decoration: none;
-    }
-
-    footer a:hover {
-      text-decoration: underline;
-    }
-
-    @keyframes fadeInUp {
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
+    @keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
 
     /* Sticky booking bar */
-    .sticky-bar {
-      position: fixed;
-      bottom: 1rem;
-      left: 50%;
-      transform: translateX(-50%);
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      background: rgba(2, 6, 23, 0.9);
-      border: 1px solid rgba(255,255,255,0.1);
-      backdrop-filter: blur(8px);
-      padding: 0.75rem 1.25rem;
-      border-radius: 999px;
-      z-index: 1000;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.4);
-    }
+    .sticky-bar { position: fixed; bottom: 20px; left: 50%; transform: translate(-50%, 20px); background: #0f766e; color: #ffffff; padding: 14px 22px; border-radius: 999px; display: flex; align-items: center; gap: 12px; box-shadow: 0 10px 25px rgba(0,0,0,0.15); z-index: 9999; opacity: 0; pointer-events: none; transition: opacity 0.6s ease, transform 0.6s ease; }
+    .sticky-bar.show { opacity: 1; pointer-events: auto; transform: translate(-50%, 0); animation: pulseOnce 1.2s ease-out 0.6s 1; }
+    @keyframes pulseOnce { 0% { box-shadow: 0 10px 25px rgba(0,0,0,0.15); } 50% { box-shadow: 0 10px 35px rgba(15,118,110,0.45); } 100% { box-shadow: 0 10px 25px rgba(0,0,0,0.15); } }
 
-    .sticky-bar span {
-      font-size: 0.9rem;
-      color: var(--muted);
-    }
+    .sticky-secondary { background: rgba(255,255,255,0.15); color: #ffffff; padding: 8px 14px; border-radius: 999px; font-size: 0.9rem; text-decoration: none; transition: background 0.3s ease; }
+    .sticky-secondary:hover { background: rgba(255,255,255,0.25); }
 
-    .sticky-cta {
-      background: var(--accent);
-      color: #020617;
-      padding: 0.6rem 1.2rem;
-      border-radius: 999px;
-      font-weight: 600;
-      text-decoration: none;
-      transition: transform 0.15s ease, box-shadow 0.15s ease;
-    }
-
-    .sticky-cta:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 6px 20px rgba(34,197,94,0.3);
-    }
-
-    @media (max-width: 640px) {
-      .sticky-bar {
-        width: calc(100% - 2rem);
-        justify-content: space-between;
-      }
-    }
-    }
+    @media (max-width: 640px) { .sticky-bar { width: calc(100% - 2rem); justify-content: space-between; } }
   </style>
 </head>
 <body>
 
   <!-- Sticky Book Now Bar -->
-  <div class="sticky-bar">
+  <div class="sticky-bar" id="stickyBar">
     <span>Ready to book?</span>
-    <a href="https://beaconphysio.janeapp.com/#/staff_member/40" target="_blank" rel="noopener noreferrer" class="sticky-cta">Book Now</a>
+    <a href="https://beaconphysio.janeapp.com/#/staff_member/40" target="_blank" rel="noopener noreferrer" class="sticky-cta" id="stickyCta">Book Now</a>
+    <a href="mailto:info@drlumba.ca?subject=New%20Patient%20Inquiry&body=Hello%20Dr.%20Lumba,%0D%0A%0D%0AI%20have%20a%20question%20about%20chiropractic%20care.%0D%0A%0D%0AName:%0D%0APhone:%0D%0A%0D%0AThank%20you," class="sticky-secondary">Questions?</a>
   </div>
 
   <header>
     <div class="container">
       <h1>Move Better. Feel Stronger.</h1>
-      <p>
-        Modern chiropractic care focused on movement, recovery, and long-term resilience — not quick fixes.
-      </p>
-      <a href="https://yourclinic.janeapp.com" target="_blank" class="cta">Book an Appointment</a>
+      <p>Modern chiropractic care focused on movement, recovery, and long-term resilience — not quick fixes.</p>
+      <a href="https://beaconphysio.janeapp.com/#/staff_member/40" target="_blank" rel="noopener noreferrer" class="cta">Book an Appointment</a>
     </div>
   </header>
 
@@ -232,10 +92,7 @@
   <section>
     <div class="container about">
       <h2 style="font-size:2rem; margin-bottom:1rem;">About Dr. Lumba</h2>
-      <p style="color: var(--muted);">
-        Chiropractic care grounded in modern biomechanics, patient education, and sustainable results. 
-        Every visit is built around movement quality, not dependency.
-      </p>
+      <p style="color: var(--muted);">Chiropractic care grounded in modern biomechanics, patient education, and sustainable results. Every visit is built around movement quality, not dependency.</p>
     </div>
   </section>
 
@@ -248,6 +105,27 @@
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    const stickyCta = document.getElementById('stickyCta');
+    const stickyBar = document.getElementById('stickyBar');
+
+    // Check localStorage for dismissal
+    if (!localStorage.getItem('stickyBarDismissed')) {
+      const showAfterScroll = () => {
+        const scrollPercent = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
+        if (scrollPercent > 25) {
+          stickyBar.classList.add('show');
+          window.removeEventListener('scroll', showAfterScroll);
+        }
+      };
+      window.addEventListener('scroll', showAfterScroll);
+    }
+
+    // Hide bar after click and remember dismissal
+    stickyCta.addEventListener('click', () => {
+      stickyBar.classList.remove('show');
+      localStorage.setItem('stickyBarDismissed', 'true');
+    });
   </script>
 
 </body>
