@@ -11,11 +11,11 @@
 
   <style>
     :root {
-      --bg: #0f172a;          /* slate-900 */
-      --card: #020617;        /* near-black */
-      --text: #e5e7eb;        /* gray-200 */
-      --muted: #9ca3af;       /* gray-400 */
-      --accent: #22c55e;      /* green-500 */
+      --bg: #0f172a;
+      --card: #020617;
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+      --accent: #22c55e;
     }
 
     * {
@@ -29,6 +29,7 @@
       background: radial-gradient(circle at top, #020617, #0f172a);
       color: var(--text);
       line-height: 1.6;
+      overflow-x: hidden;
     }
 
     .container {
@@ -40,6 +41,7 @@
     header {
       padding: 4rem 0 6rem;
       text-align: center;
+      position: relative;
     }
 
     header h1 {
@@ -47,6 +49,9 @@
       font-weight: 700;
       letter-spacing: -0.02em;
       margin-bottom: 1rem;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 1s forwards;
     }
 
     header p {
@@ -54,6 +59,9 @@
       color: var(--muted);
       max-width: 650px;
       margin: 0 auto 2.5rem;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 1s 0.3s forwards;
     }
 
     .cta {
@@ -65,6 +73,12 @@
       font-weight: 600;
       text-decoration: none;
       transition: transform 0.15s ease, box-shadow 0.15s ease;
+      position: sticky;
+      top: 1rem;
+      z-index: 999;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 1s 0.6s forwards;
     }
 
     .cta:hover {
@@ -88,7 +102,14 @@
       border-radius: 1.5rem;
       padding: 2rem;
       backdrop-filter: blur(6px);
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 1s forwards;
     }
+
+    .card:nth-child(1) { animation-delay: 0.3s; }
+    .card:nth-child(2) { animation-delay: 0.5s; }
+    .card:nth-child(3) { animation-delay: 0.7s; }
 
     .card h3 {
       font-size: 1.2rem;
@@ -104,6 +125,9 @@
       max-width: 750px;
       margin: 0 auto;
       text-align: center;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 1s 0.9s forwards;
     }
 
     footer {
@@ -121,6 +145,13 @@
     footer a:hover {
       text-decoration: underline;
     }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
   </style>
 </head>
 <body>
@@ -131,7 +162,7 @@
       <p>
         Modern chiropractic care focused on movement, recovery, and long-term resilience — not quick fixes.
       </p>
-      <a href="https://beaconphysio.janeapp.com/#/staff_member/40" class="cta">Book an Appointment</a>
+      <a href="https://beaconphysio.janeapp.com/#/staff_member/40" target="_blank" class="cta">Book an Appointment</a>
     </div>
   </header>
 
