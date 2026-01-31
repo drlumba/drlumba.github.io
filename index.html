@@ -277,31 +277,20 @@
     </div>
   </section>
 
-  <footer>
-    <div class="container">
-      <p>© <span id="year"></span> Dr. Lumba Chiropractic · Windsor / Tecumseh</p>
-      <p><a href="mailto:info@drlumba.ca">info@drlumba.ca</a></p>
-    </div>
-  </footer>
-
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    const stickyCta = document.getElementById('stickyCta');
-    const stickyBar = document.getElementById('stickyBar');
-
-    if (!localStorage.getItem('stickyBarDismissed')) {
-      const showAfterScroll = () => {
-        const scrollPercent = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
-        if (scrollPercent > 25) {
-          stickyBar.classList.add('show');
-          window.removeEventListener('scroll', showAfterScroll);
-        }
-      };
-      window.addEventListener('scroll', showAfterScroll);
-    }
-
-    stickyCta.addEventListener('click', () => {
-      stickyBar.classList.remove('show');
-      localStorage.setItem('stickyBarDismissed', 'true');
-   
+  <!-- Google Reviews Section -->
+  <section>
+    <div class="container" style="max-width:800px; margin:0 auto;">
+      <h2 style="text-align:center; font-size:1.75rem; margin-bottom:2rem;">What Our Patients Say</h2>
+      <div class="grid">
+        <div class="card">
+          <p style="font-style:italic;">"Dr. Lumba is incredibly thorough and attentive. My recovery has been smooth and effective."</p>
+          <p style="color:var(--muted); font-size:0.85rem; margin-top:0.5rem;">– Jane D.</p>
+        </div>
+        <div class="card">
+          <p style="font-style:italic;">"Highly professional and knowledgeable. I feel confident moving again after my injury."</p>
+          <p style="color:var(--muted); font-size:0.85rem; margin-top:0.5rem;">– Mark R.</p>
+        </div>
+        <div class="card">
+          <p style="font-style:italic;">"Friendly, evidence-based care that really works. The exercises and advice are practical."</p>
+          <p style="color:var(--muted); font-size:0.85rem; margin-top:0.5rem;">– Lisa W.</p>
+        </div>
