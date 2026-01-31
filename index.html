@@ -125,7 +125,92 @@
     ]
   }
   </script>
-
+<!-- JSON-LD for structured data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "MedicalBusiness",
+      "name": "Dr. Lumba Chiropractic",
+      "url": "https://www.drlumba.ca",
+      "logo": "https://www.drlumba.ca/8D252B37-9EA6-4A77-B9AA-A6987D901BE3.jpg",
+      "image": "https://www.drlumba.ca/8D252B37-9EA6-4A77-B9AA-A6987D901BE3.jpg",
+      "description": "Evidence-informed chiropractic care focused on movement quality, injury recovery, and long-term resilience.",
+      "priceRange": "$$",
+      "telephone": "+1-519-555-1234",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "123 Main St",
+        "addressLocality": "Windsor",
+        "addressRegion": "ON",
+        "postalCode": "N8X 1A1",
+        "addressCountry": "CA"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 42.3149,
+        "longitude": -83.0364
+      },
+      "areaServed": {
+        "@type": "AdministrativeArea",
+        "name": "Windsor–Essex County"
+      },
+      "medicalSpecialty": "Chiropractic",
+      "sameAs": [
+        "https://beaconphysio.janeapp.com/#/staff_member/40"
+      ],
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "reviewCount": "37"
+      },
+      "potentialAction": {
+        "@type": "ReserveAction",
+        "target": "https://beaconphysio.janeapp.com/#/staff_member/40",
+        "name": "Book Appointment"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Do I need a referral?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No referral is required. You can book directly online at any time."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What should I expect at my first visit?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Your first visit focuses on understanding your concerns, movement assessment, and discussing a plan that fits your goals."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you treat athletes and active individuals?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Care is tailored for everyday activity, sport performance, and injury recovery."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you accept insurance?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Most extended health plans cover chiropractic care. Coverage varies, so it’s best to confirm with your provider."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
 </head>
 <body>
 
