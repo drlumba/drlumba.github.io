@@ -3,113 +3,16 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dr. Lumba Chiropractic | Windsor Ontario</title>
 
+  <title>Dr. Lumba Chiropractic | Windsor ON</title>
   <meta name="description" content="Evidence-informed chiropractic care in Windsor, Ontario focused on movement quality, injury recovery, and long-term resilience." />
 
   <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-  <style>
-    :root {
-      --bg: #062e2a;
-      --card: #073b36;
-      --text: #f5f3ee;
-      --muted: #c7c3bb;
-      --accent: #1fbfa7;
-    }
-
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      font-family: 'Inter', sans-serif;
-      background: radial-gradient(circle at top, #020617, #0f172a);
-      color: var(--text);
-      line-height: 1.6;
-      overflow-x: hidden;
-    }
-
-    .container { max-width: 1100px; margin: 0 auto; padding: 0 1.5rem; }
-    section { padding: 4rem 0; }
-
-    header { padding: 4rem 0 6rem; }
-    header h1 {
-      font-size: clamp(2.5rem, 5vw, 3.5rem);
-      font-weight: 700;
-      margin-bottom: 1rem;
-    }
-
-    header p { color: var(--muted); max-width: 650px; margin-bottom: 2rem; }
-
-    .cta {
-      display: inline-block;
-      background: var(--accent);
-      color: #020617;
-      padding: 0.9rem 1.8rem;
-      border-radius: 999px;
-      font-weight: 600;
-      text-decoration: none;
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 2rem;
-    }
-
-    .card {
-      background: rgba(255,255,255,0.03);
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 1.5rem;
-      padding: 2rem;
-    }
-
-    .card h3 { margin-bottom: 0.75rem; }
-    .card p { color: var(--muted); font-size: 0.95rem; }
-
-    footer {
-      padding: 3rem 0;
-      text-align: center;
-      font-size: 0.85rem;
-      color: var(--muted);
-    }
-
-    footer a { color: var(--muted); text-decoration: none; }
-
-    .hero-image {
-      border-radius: 1.75rem;
-      overflow: hidden;
-      box-shadow: 0 30px 60px rgba(0,0,0,0.45);
-    }
-
-    .hero-image img { width: 100%; display: block; }
-
-    .sticky-bar {
-      position: fixed;
-      bottom: 20px;
-      left: 50%;
-      transform: translateX(-50%);
-      background: #0f766e;
-      color: #fff;
-      padding: 14px 22px;
-      border-radius: 999px;
-      display: none;
-      gap: 12px;
-      z-index: 9999;
-    }
-
-    .sticky-bar.show { display: flex; }
-
-    .sticky-secondary {
-      background: rgba(255,255,255,0.15);
-      padding: 8px 14px;
-      border-radius: 999px;
-      font-size: 0.9rem;
-      text-decoration: none;
-      color: #fff;
-    }
-  </style>
-
-  <!-- Structured Data -->
+  <!-- =======================
+       COMBINED SEO + SCHEMA
+       ======================= -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -121,149 +24,178 @@
         "logo": "https://www.drlumba.ca/8D252B37-9EA6-4A77-B9AA-A6987D901BE3.jpg",
         "image": "https://www.drlumba.ca/8D252B37-9EA6-4A77-B9AA-A6987D901BE3.jpg",
         "description": "Evidence-informed chiropractic care focused on movement quality, injury recovery, and long-term resilience.",
+        "priceRange": "$$",
+        "medicalSpecialty": "Chiropractic",
         "address": {
           "@type": "PostalAddress",
           "addressLocality": "Windsor",
           "addressRegion": "ON",
           "addressCountry": "CA"
         },
-        "medicalSpecialty": "Chiropractic",
         "areaServed": {
           "@type": "AdministrativeArea",
           "name": "Windsor–Essex County"
         },
+        "sameAs": [
+          "https://beaconphysio.janeapp.com/#/staff_member/40"
+        ],
         "potentialAction": {
           "@type": "ReserveAction",
-          "target": "https://beaconphysio.janeapp.com/#/staff_member/40",
-          "name": "Book Appointment"
+          "name": "Book Appointment",
+          "target": "https://beaconphysio.janeapp.com/#/staff_member/40"
         }
       },
       {
-        "@type": "FAQPage",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "Do I need a referral?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "No referral is required. You can book directly online at any time."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "What should I expect at my first visit?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Your first visit focuses on understanding your concerns, movement assessment, and discussing a plan aligned with your goals."
-            }
-          }
-        ]
+        "@type": "Physician",
+        "name": "Dr. Lawrence Lumba",
+        "medicalSpecialty": "Chiropractic",
+        "affiliation": {
+          "@type": "MedicalBusiness",
+          "name": "Dr. Lumba Chiropractic"
+        },
+        "areaServed": {
+          "@type": "AdministrativeArea",
+          "name": "Windsor–Essex County"
+        }
       },
       {
         "@type": "MedicalCondition",
-        "name": "Sprains and Strains"
+        "name": "Sprains and Strains",
+        "description": "Muscle and ligament injuries affecting the spine and extremities.",
+        "possibleTreatment": { "@type": "MedicalTherapy", "name": "Chiropractic Care" }
       },
       {
         "@type": "MedicalCondition",
-        "name": "Arthritic and Degenerative Joint Pain"
+        "name": "Osteoarthritis and Degenerative Joint Pain",
+        "description": "Joint pain and stiffness associated with osteoarthritis.",
+        "possibleTreatment": { "@type": "MedicalTherapy", "name": "Chiropractic Care" }
       },
       {
         "@type": "MedicalCondition",
-        "name": "Motor Vehicle Accident Injuries"
+        "name": "Motor Vehicle Accident Injuries",
+        "description": "Soft tissue injuries such as whiplash following collisions.",
+        "possibleTreatment": { "@type": "MedicalTherapy", "name": "Chiropractic Care" }
       },
       {
         "@type": "MedicalCondition",
-        "name": "Workplace Injuries"
+        "name": "Workplace Injuries",
+        "description": "Repetitive strain, lifting, and work-related musculoskeletal injuries.",
+        "possibleTreatment": { "@type": "MedicalTherapy", "name": "Chiropractic Care" }
       }
     ]
   }
   </script>
 
+  <!-- Booking Conversion Tracking -->
+  <script>
+    function trackBooking() {
+      if (window.gtag) {
+        gtag('event', 'conversion', {
+          event_category: 'Booking',
+          event_label: 'Jane Appointment'
+        });
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background: radial-gradient(circle at top, #020617, #0f172a);
+      color: #f5f3ee;
+      margin: 0;
+      line-height: 1.6;
+    }
+    .container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 2rem;
+    }
+    header {
+      padding: 4rem 0;
+      text-align: center;
+    }
+    h1, h2, h3 {
+      margin-bottom: 1rem;
+    }
+    p {
+      color: #c7c3bb;
+    }
+    .cta {
+      display: inline-block;
+      background: #1fbfa7;
+      color: #020617;
+      padding: 0.9rem 1.8rem;
+      border-radius: 999px;
+      font-weight: 600;
+      text-decoration: none;
+    }
+    section {
+      padding: 4rem 0;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+    .card {
+      background: rgba(255,255,255,0.04);
+      border-radius: 1.25rem;
+      padding: 2rem;
+    }
+    footer {
+      text-align: center;
+      font-size: 0.85rem;
+      padding: 2rem;
+      color: #c7c3bb;
+    }
+  </style>
 </head>
 
 <body>
 
-<div class="sticky-bar" id="stickyBar">
-  <span>Ready to book?</span>
-  <a href="https://beaconphysio.janeapp.com/#/staff_member/40" class="cta">Book Now</a>
-  <a href="mailto:info@drlumba.ca" class="sticky-secondary">Questions?</a>
-</div>
-
 <header>
-  <div class="container grid" style="align-items:center;">
-    <div>
-      <h1>Move with confidence. Recover with intent.</h1>
-      <p>Evidence-informed chiropractic care focused on movement quality, injury recovery, and long-term resilience.</p>
-      <a href="https://beaconphysio.janeapp.com/#/staff_member/40" class="cta">Book an Appointment</a>
-    </div>
-    <div class="hero-image">
-      <img src="/8D252B37-9EA6-4A77-B9AA-A6987D901BE3.jpg" alt="Dr. Lawrence Lumba providing chiropractic care" />
-    </div>
+  <div class="container">
+    <h1>Move with confidence. Recover with intent.</h1>
+    <p>Evidence-informed chiropractic care focused on movement quality, injury recovery, and long-term resilience.</p>
+    <a href="https://beaconphysio.janeapp.com/#/staff_member/40"
+       class="cta"
+       target="_blank"
+       rel="noopener noreferrer"
+       onclick="trackBooking()">
+       Book an Appointment
+    </a>
   </div>
 </header>
 
-<section>
-  <div class="container grid">
-    <div class="card">
-      <h3>Evidence-Informed Care</h3>
-      <p>Assessment and care plans grounded in current research and clinical reasoning.</p>
-    </div>
-    <div class="card">
-      <h3>Active Rehabilitation</h3>
-      <p>Mobility and strength work designed to support movement outside the clinic.</p>
-    </div>
-    <div class="card">
-      <h3>Performance & Recovery</h3>
-      <p>Care for active individuals, professionals, and athletes.</p>
-    </div>
-  </div>
-</section>
-
 <section id="injuries">
   <div class="container">
-    <h2 style="text-align:center; margin-bottom:2rem;">Commonly Treated Injuries</h2>
+    <h2 style="text-align:center;">Commonly Treated Injuries</h2>
     <div class="grid">
       <div class="card">
         <h3>Sprains & Strains</h3>
-        <p>Muscle and ligament injuries affecting the spine and extremities.</p>
+        <p>Muscle and ligament injuries involving the spine and extremities.</p>
       </div>
       <div class="card">
         <h3>Arthritic & Degenerative Pain</h3>
-        <p>Joint stiffness and pain associated with osteoarthritis and age-related changes.</p>
+        <p>Joint stiffness and discomfort related to osteoarthritis.</p>
       </div>
       <div class="card">
-        <h3>Motor Vehicle Injuries</h3>
-        <p>Whiplash and soft tissue injuries following motor vehicle accidents.</p>
+        <h3>Motor Vehicle Accident Injuries</h3>
+        <p>Whiplash and soft tissue injuries following collisions.</p>
       </div>
       <div class="card">
         <h3>Workplace Injuries</h3>
-        <p>Repetitive strain, lifting, and postural injuries related to work demands.</p>
+        <p>Repetitive strain, lifting, and work-related injuries.</p>
       </div>
     </div>
-  </div>
-</section>
-
-<section>
-  <div class="container" style="max-width:700px;">
-    <h2 style="text-align:center; margin-bottom:2rem;">Common Questions</h2>
-    <p><strong>Do you accept insurance?</strong><br><span style="color:var(--muted);">Most extended health plans cover chiropractic care.</span></p>
   </div>
 </section>
 
 <footer>
-  <p>© <span id="year"></span> Dr. Lumba Chiropractic · Windsor, Ontario</p>
-  <p><a href="mailto:info@drlumba.ca">info@drlumba.ca</a></p>
+  <p>© <script>document.write(new Date().getFullYear())</script> Dr. Lumba Chiropractic · Windsor, ON</p>
+  <p><a href="mailto:info@drlumba.ca" style="color:#c7c3bb;">info@drlumba.ca</a></p>
 </footer>
-
-<script>
-  document.getElementById("year").textContent = new Date().getFullYear();
-
-  window.addEventListener("scroll", () => {
-    if (window.scrollY > 400) {
-      document.getElementById("stickyBar").classList.add("show");
-    }
-  });
-</script>
 
 </body>
 </html>
