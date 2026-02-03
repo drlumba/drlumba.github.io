@@ -1,307 +1,233 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dr. Lumba Chiropractic | Windsor, Ontario</title>
+<meta name="description" content="Evidence-informed chiropractic care in Windsor, Ontario with custom orthotics and medical device support.">
 
-  <title>Dr. Lumba Chiropractic | Windsor, Ontario</title>
-  <meta name="description" content="Evidence-informed chiropractic care in Windsor, Ontario with custom orthotics and medical device support." />
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-  <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<!-- LocalBusiness Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Chiropractic",
+  "name": "Dr. Lumba Chiropractic",
+  "url": "https://drlumba.ca",
+  "email": "info@drlumba.ca",
+  "areaServed": "Windsor, Ontario",
+  "medicalSpecialty": "Chiropractic"
+}
+</script>
 
-  <!-- LocalBusiness Schema -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Chiropractic",
-    "name": "Dr. Lumba Chiropractic",
-    "url": "https://drlumba.ca",
-    "email": "info@drlumba.ca",
-    "areaServed": "Windsor, Ontario",
-    "medicalSpecialty": "Chiropractic"
-  }
-  </script>
+<!-- FAQ Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type":"Question","name":"Do I need a referral to see a chiropractor?","acceptedAnswer":{"@type":"Answer","text":"No referral is required. You can book an appointment directly without seeing a physician first."}},
+    {"@type":"Question","name":"What can I expect during my first chiropractic visit?","acceptedAnswer":{"@type":"Answer","text":"Your first visit includes a detailed health history, discussion of goals, physical examination, and movement assessment. Treatment may begin on the same visit if appropriate."}},
+    {"@type":"Question","name":"Will I receive treatment on my first appointment?","acceptedAnswer":{"@type":"Answer","text":"In most cases, treatment begins on the first visit if it is safe and clinically appropriate."}},
+    {"@type":"Question","name":"Do you provide medical devices such as custom orthotics or compression stockings?","acceptedAnswer":{"@type":"Answer","text":"When clinically indicated, chiropractors may assess and prescribe medical devices such as custom foot orthotics or compression stockings as part of patient care."}}
+  ]
+}
+</script>
 
-  <!-- FAQ Schema -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "Do I need a referral to see a chiropractor?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "No referral is required. You can book an appointment directly without seeing a physician first."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What can I expect during my first chiropractic visit?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Your first visit includes a detailed health history, discussion of goals, physical examination, and movement assessment. Treatment may begin on the same visit if appropriate."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Will I receive treatment on my first appointment?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "In most cases, treatment begins on the first visit if it is safe and clinically appropriate."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Do you provide medical devices such as custom orthotics or compression stockings?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "When clinically indicated, chiropractors may assess and prescribe medical devices such as custom foot orthotics or compression stockings as part of patient care."
-        }
-      }
-    ]
-  }
-  </script>
+<style>
+:root {
+  --bg: #062e2a;
+  --card: #073b36;
+  --text: #f5f3ee;
+  --muted: #c7c3bb;
+  --accent: #1fbfa7;
+}
 
-  <style>
-    :root {
-      --bg: #062e2a;
-      --card: #073b36;
-      --text: #f5f3ee;
-      --muted: #c7c3bb;
-      --accent: #1fbfa7;
-    }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Inter', sans-serif; background: radial-gradient(circle at top, #020617, #0f172a); color: var(--text); line-height:1.6; }
+.container { max-width: 1100px; margin: 0 auto; padding: 0 1.5rem; }
+h1 { font-size: clamp(2.5rem, 5vw, 3.5rem); font-weight: 700; }
+h2 { font-size: 2rem; margin-bottom:1rem; text-align:center; }
+p { color: var(--muted); }
 
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      font-family: 'Inter', sans-serif;
-      background: radial-gradient(circle at top, #020617, #0f172a);
-      color: var(--text);
-    }
+section { padding:4rem 0; border-top: 1px solid rgba(255,255,255,0.08); }
 
-    .container { max-width: 1100px; margin: 0 auto; padding: 0 1.5rem; }
-    h1 { font-size: clamp(2.5rem, 5vw, 3.5rem); }
-    h2 { font-size: 2rem; margin-bottom: 1rem; text-align: center; }
-    p { color: var(--muted); }
+.cta {
+  display:inline-block;
+  background: var(--accent);
+  color: #020617;
+  padding: 0.9rem 1.8rem;
+  border-radius:999px;
+  font-weight:600;
+  text-decoration:none;
+}
 
-    section { padding: 4rem 0; border-top: 1px solid rgba(255,255,255,0.08); }
-    .cta {
-      display: inline-block;
-      background: var(--accent);
-      color: #020617;
-      padding: 0.9rem 1.8rem;
-      border-radius: 999px;
-      font-weight: 600;
-      text-decoration: none;
-    }
+.hero-grid { display:grid; grid-template-columns:1fr 1fr; gap:3rem; align-items:center; }
+.hero-image { border-radius: 1.75rem; overflow:hidden; box-shadow:0 30px 60px rgba(0,0,0,0.45);}
+.hero-image img { width:100%; display:block; }
 
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 3rem;
-      align-items: center;
-    }
+.sticky-bar {
+  position:fixed;
+  bottom:20px;
+  left:50%;
+  transform: translateX(-50%);
+  background:#0f766e;
+  color:#fff;
+  padding:14px 22px;
+  border-radius:999px;
+  display:flex;
+  gap:12px;
+  opacity:0;
+  pointer-events:none;
+  transition:0.4s;
+  z-index:9999;
+}
+.sticky-bar.show { opacity:1; pointer-events:auto; }
+.sticky-secondary {
+  background: rgba(255,255,255,0.15);
+  color:#fff;
+  padding:8px 14px;
+  border-radius:999px;
+  text-decoration:none;
+}
 
-    .hero-image {
-      border-radius: 1.75rem;
-      overflow: hidden;
-      box-shadow: 0 30px 60px rgba(0,0,0,0.45);
-    }
+/* Accordion styling */
+.accordion { max-width: 820px; margin:0 auto; }
+.accordion details {
+  border-bottom:1px solid rgba(255,255,255,0.15);
+  padding:1rem 0;
+  overflow: hidden;
+  transition: all 0.35s ease;
+}
+.accordion summary {
+  cursor:pointer;
+  font-size:1.05rem;
+  font-weight:500;
+  list-style:none;
+  position:relative;
+  padding-right:1.5rem;
+}
+.accordion summary::after {
+  content:"+";
+  position:absolute;
+  right:0;
+  top:0;
+  font-size:1.2rem;
+  transition: transform 0.3s ease;
+}
+.accordion details[open] summary::after { content:"–"; transform: rotate(180deg); }
 
-    .hero-image img {
-      width: 100%;
-      display: block;
-    }
+.accordion p {
+  margin:0.75rem 0 0;
+  line-height:1.6;
+  color:#e6e2db;
+  opacity:0;
+  transform: translateY(-5px);
+  transition: all 0.3s ease;
+  max-height:0;
+}
+.accordion details[open] p {
+  opacity:1;
+  transform: translateY(0);
+  max-height:500px;
+}
 
-    .card-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 2rem;
-    }
+/* Responsive breakpoints */
+@media (max-width: 767px) { .hero-grid { grid-template-columns:1fr; } }
+@media (min-width:768px) and (max-width:899px) { .hero-grid { grid-template-columns:1fr; } }
+@media (max-width:899px) { .sticky-bar { display:none !important; } }
 
-    .card {
-      background: rgba(255,255,255,0.05);
-      border-radius: 1.25rem;
-      padding: 2rem;
-    }
-
-    footer {
-      padding: 3rem 0;
-      text-align: center;
-      font-size: 0.85rem;
-      color: var(--muted);
-    }
-
-    /* Breakpoints tuned for Mac/Windows */
-    @media (max-width: 767px) {
-      .hero-grid { grid-template-columns: 1fr; }
-    }
-    @media (min-width: 768px) and (max-width: 899px) {
-      .hero-grid { grid-template-columns: 1fr; }
-    }
-
-    /* Sticky bar */
-    .sticky-bar {
-      position: fixed;
-      bottom: 20px;
-      left: 50%;
-      transform: translateX(-50%);
-      background: #0f766e;
-      color: #fff;
-      padding: 14px 22px;
-      border-radius: 999px;
-      display: flex;
-      gap: 12px;
-      opacity: 0;
-      pointer-events: none;
-      transition: 0.4s;
-      z-index: 9999;
-    }
-
-    @media (max-width: 899px) {
-      .sticky-bar { display: none !important; }
-    }
-
-    .sticky-bar.show { opacity: 1; pointer-events: auto; }
-    .sticky-secondary {
-      background: rgba(255,255,255,0.15);
-      color: #fff;
-      padding: 8px 14px;
-      border-radius: 999px;
-      text-decoration: none;
-    }
-  </style>
+footer { padding:3rem 0; text-align:center; font-size:0.85rem; color:var(--muted); }
+</style>
 </head>
-
 <body>
 
 <!-- Sticky booking bar -->
 <div class="sticky-bar" id="stickyBar">
   <span>Ready to book?</span>
-  <a href="https://beaconphysio.janeapp.com/#/staff_member/40"
-     target="_blank"
-     class="cta"
-     id="stickyCta">
-    Book Now
-  </a>
-  <a href="mailto:info@drlumba.ca?subject=New%20Patient%20Inquiry"
-     class="sticky-secondary">
-    Questions?
-  </a>
+  <a href="https://beaconphysio.janeapp.com/#/staff_member/40" target="_blank" class="cta" id="stickyCta">Book Now</a>
+  <a href="mailto:info@drlumba.ca?subject=New%20Patient%20Inquiry" class="sticky-secondary">Questions?</a>
 </div>
 
 <header>
   <div class="container hero-grid">
     <div>
       <h1>Move with confidence. Recover with intent.</h1>
-      <p>Evidence-informed chiropractic care focused on movement quality, injury recovery, and long-term resilience.</p>
-      <br>
-      <a href="https://beaconphysio.janeapp.com/#/staff_member/40"
-         target="_blank"
-         class="cta"
-         id="mainCta">
-        Book an Appointment
-      </a>
+      <p>Evidence-informed chiropractic care focused on movement quality, injury recovery, and long-term resilience.</p><br>
+      <a href="https://beaconphysio.janeapp.com/#/staff_member/40" target="_blank" class="cta" id="mainCta">Book an Appointment</a>
     </div>
     <div class="hero-image">
-      <img src="8D252B37-9EA6-4A77-B9AA-A6987D901BE3.jpg"
-           alt="Dr. Lawrence Lumba providing chiropractic care in Windsor Ontario">
+      <img src="8D252B37-9EA6-4A77-B9AA-A6987D901BE3.jpg" alt="Dr. Lawrence Lumba providing chiropractic care in Windsor Ontario">
     </div>
   </div>
 </header>
 
-<section>
+<!-- FAQ Accordion -->
+<section id="faq">
   <div class="container">
     <h2>Frequently Asked Questions</h2>
-
-    <div class="card-grid">
-      <div class="card">
-        <h3>Do I need a referral to see a chiropractor?</h3>
-        <p>No referral is required. You can book directly online at any time.</p>
-      </div>
-
-      <div class="card">
-        <h3>What can I expect during my first visit?</h3>
-        <p>Your first visit includes a detailed health history, discussion of your goals, a physical examination, and movement assessment. If appropriate, treatment may begin on the same visit.</p>
-      </div>
-
-      <div class="card">
-        <h3>Will I receive treatment on the first appointment?</h3>
-        <p>In most cases, if it is safe and appropriate, treatment may begin on the first visit.</p>
-      </div>
-
-      <div class="card">
-        <h3>What conditions do you commonly treat?</h3>
-        <p>Common concerns include back pain, neck pain, sports-related injuries, joint pain, posture-related discomfort, and movement limitations.</p>
-      </div>
-
-      <div class="card">
-        <h3>Do you provide medical devices such as custom orthotics or compression stockings?</h3>
-        <p>When clinically indicated, assessment and prescription of custom orthotics or compression stockings may be part of your care plan to support function and symptom management.</p>
-      </div>
+    <div class="accordion">
+      <details><summary>Do I need a referral to see a chiropractor?</summary><p>No referral is required. You can book an appointment directly without seeing a physician first.</p></details>
+      <details><summary>What can I expect during my first visit?</summary><p>Your first visit includes a detailed health history, discussion of your goals, a physical examination, and movement assessment. If appropriate, treatment may begin on the same visit.</p></details>
+      <details><summary>Will I receive treatment on my first appointment?</summary><p>In most cases, treatment begins on the first visit if it is safe and clinically appropriate.</p></details>
+      <details><summary>What conditions do you commonly treat?</summary><p>Common concerns include back pain, neck pain, joint pain, posture-related discomfort, sports-related injuries, and movement limitations.</p></details>
+      <details><summary>Do you provide medical devices such as custom orthotics or compression stockings?</summary><p>When clinically indicated, assessment and prescription of custom orthotics or compression stockings may be part of your care plan to support function and symptom management.</p></details>
     </div>
   </div>
 </section>
 
+<!-- Orthotics & Medical Devices Accordion -->
 <section id="orthotics">
   <div class="container">
     <h2>Custom Orthotics & Medical Devices</h2>
-
-    <p style="max-width: 750px; margin: 0 auto 2.5rem; text-align: center;">
-      When clinically indicated, medical devices may be recommended as part of a comprehensive chiropractic care plan. These devices are prescribed based on assessment findings and individual functional needs.
-    </p>
-
-    <div class="card-grid">
-      <div class="card">
-        <h3>Custom Foot Orthotics</h3>
-        <p>Custom foot orthotics are prescribed following a biomechanical and functional assessment. They are designed to support foot mechanics and may be used as part of a broader plan addressing movement, posture, or load management.</p>
-        <p>Many extended health benefit plans provide coverage for custom orthotics when prescribed by a regulated health professional. Coverage varies by insurer and plan.</p>
-      </div>
-
-      <div class="card">
-        <h3>Compression Stockings</h3>
-        <p>Compression stockings may be recommended when clinically appropriate to support circulation and lower-limb comfort. Selection is based on assessment findings and individual needs.</p>
-        <p>Some insurance plans include coverage for compression stockings when medical necessity criteria are met. Patients are encouraged to confirm coverage with their provider.</p>
-      </div>
-
-      <div class="card">
-        <h3>Insurance & Benefits Information</h3>
-        <p>Coverage for medical devices such as custom orthotics or compression stockings depends on your individual benefits plan. Some insurers require documentation, including a prescription or biomechanical assessment.</p>
-        <p>Receipts and required clinical documentation can be provided to support reimbursement where applicable. Direct billing availability varies by provider.</p>
-      </div>
+    <div class="accordion">
+      <details><summary>Custom Foot Orthotics</summary><p>Custom foot orthotics are prescribed following a biomechanical and functional assessment. They support foot mechanics and may be used as part of a broader chiropractic care plan.</p><p>Many extended health benefit plans provide coverage for custom orthotics when prescribed by a regulated health professional. Coverage varies by insurer and plan.</p></details>
+      <details><summary>Compression Stockings</summary><p>Compression stockings may be recommended when clinically appropriate to support circulation and lower-limb comfort. Selection is based on individual assessment findings.</p><p>Some insurance plans include coverage for compression stockings when medical necessity criteria are met.</p></details>
+      <details><summary>Insurance & Benefits Information</summary><p>Coverage for medical devices depends on your individual benefits plan. Some insurers require documentation such as a prescription, diagnosis, or biomechanical assessment.</p><p>Receipts and supporting clinical documentation can be provided for insurance reimbursement where applicable. Direct billing availability varies by provider.</p></details>
     </div>
   </div>
 </section>
 
 <footer>
   © <span id="year"></span> Dr. Lumba Chiropractic
-  <p style="font-size: 0.85rem; color: var(--muted); margin-top: 1rem;">
-    Insurance coverage varies by provider and plan. Patients are responsible for confirming eligibility and reimbursement details with their insurer.
-  </p>
+  <p style="font-size:0.85rem; margin-top:1rem;">Insurance coverage varies by provider and plan. Patients are responsible for confirming eligibility and reimbursement details with their insurer.</p>
 </footer>
 
 <script>
-  document.getElementById('year').textContent = new Date().getFullYear();
+document.getElementById('year').textContent = new Date().getFullYear();
 
-  const stickyBar = document.getElementById('stickyBar');
-  const stickyCta = document.getElementById('stickyCta');
+// Sticky bar
+const stickyBar = document.getElementById('stickyBar');
+const stickyCta = document.getElementById('stickyCta');
+const isDesktop = window.matchMedia('(min-width: 900px)').matches;
 
-  const isDesktop = window.matchMedia('(min-width: 900px)').matches;
+if (isDesktop && !localStorage.getItem('stickyBarDismissed')) {
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > window.innerHeight * 0.25) {
+      stickyBar.classList.add('show');
+    }
+  });
+}
 
-  if (isDesktop && !localStorage.getItem('stickyBarDismissed')) {
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > window.innerHeight * 0.25) {
-        stickyBar.classList.add('show');
+stickyCta.addEventListener('click', () => {
+  stickyBar.classList.remove('show');
+  localStorage.setItem('stickyBarDismissed', 'true');
+});
+
+// Accordion auto-close behavior
+document.querySelectorAll('.accordion').forEach((accordion) => {
+  accordion.querySelectorAll('details').forEach((detail) => {
+    detail.addEventListener('toggle', () => {
+      if (detail.open) {
+        accordion.querySelectorAll('details').forEach((other) => {
+          if (other !== detail) other.removeAttribute('open');
+        });
       }
     });
-  }
-
-  stickyCta.addEventListener('click', () => {
-    stickyBar.classList.remove('show');
-    localStorage.setItem('stickyBarDismissed', 'true');
   });
+});
 </script>
 
 </body>
