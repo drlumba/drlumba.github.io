@@ -7,7 +7,7 @@
 <meta name="description" content="Evidence-informed chiropractic care in Windsor, Ontario with custom orthotics and medical device support.">
 
 <!-- Google Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
 
 <!-- LocalBusiness Schema -->
 <script type="application/ld+json">
@@ -31,7 +31,7 @@
     "longitude": -83.885595
   },
   "openingHours": "Mo-Fr 09:00-17:00",
-  "telephone": "YOUR_PHONE_NUMBER",
+  "telephone": "+1-226-826-0493",
   "medicalSpecialty": "Chiropractic"
 }
 </script>
@@ -79,9 +79,11 @@ section.visible { opacity:1; transform: translateY(0); }
 }
 .cta:hover { transform: scale(1.05); }
 
+/* Hero section */
 .hero-grid { display:grid; grid-template-columns:1fr 1fr; gap:clamp(1rem,5vw,3rem); align-items:center; }
 .hero-image { border-radius: 1.75rem; overflow:hidden; box-shadow:0 30px 60px rgba(0,0,0,0.45);}
 .hero-image img { width:100%; display:block; max-height:400px; object-fit:cover; }
+.hero-grid .cta + .cta { margin-left: 1rem; } /* move margin-left to CSS */
 
 .sticky-bar { position:fixed; bottom:20px; left:50%; transform: translateX(-50%); background:#0f766e; color:#fff; padding:14px 22px; border-radius:999px; display:flex; gap:12px; align-items:center; opacity:0; pointer-events:none; transition:0.4s; z-index:9999; }
 .sticky-bar.show { opacity:1; pointer-events:auto; }
@@ -95,8 +97,8 @@ section.visible { opacity:1; transform: translateY(0); }
 .accordion summary { cursor:pointer; font-size:1.05rem; font-weight:500; list-style:none; position:relative; padding-right:1.5rem; }
 .accordion summary::after { content:"+"; position:absolute; right:0; top:0; font-size:1.2rem; transition: transform 0.3s ease; }
 .accordion details[open] summary::after { content:"–"; transform: rotate(180deg); }
-.accordion div { margin-top:0.75rem; color:#e6e2db; max-height:0; overflow:hidden; opacity:0; transform: translateY(10px); transition: max-height 0.35s ease, opacity 0.35s ease, transform 0.35s ease; }
-.accordion details[open] div { max-height:500px; opacity:1; transform: translateY(0); }
+.accordion div { margin-top:0.75rem; color:#e6e2db; max-height:1000px; overflow:hidden; opacity:0; transform: translateY(10px); transition: max-height 0.35s ease, opacity 0.35s ease, transform 0.35s ease; }
+.accordion details[open] div { opacity:1; transform: translateY(0); }
 
 .about { max-width: 750px; margin: 0 auto; text-align: center; }
 .socials a { color: var(--muted); margin: 0 0.5rem; transition: color 0.3s ease, transform 0.2s ease; }
@@ -110,7 +112,7 @@ section.visible { opacity:1; transform: translateY(0); }
 .review-card p { color:#e6e2db; margin-bottom:0.75rem; }
 .review-card span { font-weight:600; color: var(--accent); }
 
-.map-container { width:100%; max-width:700px; margin:1.5rem auto; border-radius:1rem; overflow:hidden; box-shadow:0 15px 30px rgba(0,0,0,0.3); display:flex; justify-content:center; }
+.map-container { width:100%; max-width:700px; margin:1.5rem auto; border-radius:1rem; overflow:hidden; display:flex; justify-content:center; }
 
 /* Mobile hero button stacking and spacing */
 @media (max-width: 767px) {
@@ -134,7 +136,7 @@ footer { padding:3rem 0; text-align:center; font-size:0.75rem; color:var(--muted
 <!-- Sticky booking bar -->
 <div class="sticky-bar" id="stickyBar" role="region" aria-label="Booking Call to Action">
   <span>Ready to book?</span>
-  <a href="https://beaconphysio.janeapp.com/#/staff_member/40" target="_blank" rel="noopener noreferrer" class="cta" id="stickyCta">Book Now</a>
+  <a href="https://beaconphysio.janeapp.com/#/staff_member/40/treatment/55" target="_blank" rel="noopener noreferrer" class="cta" id="stickyCta">Book Now</a>
   <div style="display:flex; gap:8px; align-items:center;">
     <a href="mailto:info@drlumba.ca?subject=New%20Patient%20Inquiry" class="sticky-secondary">Questions?</a>
     <a href="https://www.instagram.com/drlawrencelumba" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="sticky-secondary sticky-social">
@@ -148,8 +150,8 @@ footer { padding:3rem 0; text-align:center; font-size:0.75rem; color:var(--muted
     <div>
       <h1>Move with confidence. Recover with intent.</h1>
       <p>Evidence-informed chiropractic care focused on movement quality, injury recovery, and long-term resilience.</p><br>
-      <a href="https://beaconphysio.janeapp.com/#/staff_member/40" target="_blank" rel="noopener noreferrer" class="cta" id="mainCta">Book an Appointment</a>
-      <a href="#location" class="cta" style="margin-left:1rem;">Location</a>
+      <a href="https://beaconphysio.janeapp.com/#/staff_member/40/treatment/55" target="_blank" rel="noopener noreferrer" class="cta" id="mainCta">Book an Appointment</a>
+      <a href="#location" class="cta">Location</a>
     </div>
     <div class="hero-image">
       <img src="8D252B37-9EA6-4A77-B9AA-A6987D901BE3.jpg" alt="Dr. Lawrence Lumba providing chiropractic care in Windsor Ontario">
@@ -193,13 +195,14 @@ footer { padding:3rem 0; text-align:center; font-size:0.75rem; color:var(--muted
     <p><strong>Beacon Physiotherapy, 1614 Lesperance Rd, Tecumseh, ON</strong>.</p>
     <div class="map-container">
       <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2913.566988336956!2d-83.885595!3d42.306186!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x883a6aae12f3e0c7%3A0x2f0ef5d7e5d0b6aa!2sBeacon%20Physiotherapy!5e0!3m2!1sen!2sca!4v1700000000000"
+        src="https://www.google.com/maps?q=1614+Lesperance+Rd,+Tecumseh,+ON&output=embed"
         width="100%"
         height="300"
         style="border:0; border-radius:1rem;"
-        allowfullscreen=""
+        allowfullscreen
         loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade">
+        referrerpolicy="no-referrer-when-downgrade"
+        title="Beacon Physiotherapy Location Map">
       </iframe>
     </div>
   </div>
@@ -215,7 +218,7 @@ footer { padding:3rem 0; text-align:center; font-size:0.75rem; color:var(--muted
       <div class="review-card"><p>"Excellent chiropractic care. Easy to book, friendly staff, and clear guidance for recovery."</p><span>– Emily R.</span></div>
     </div>
     <div style="text-align:center; margin-top:1.5rem;">
-      <a href="https://www.google.com/maps/place/Dr.+Lumba+Chiropractic" target="_blank" class="cta">See More Reviews</a>
+      <a href="https://www.google.com/maps/place/Dr.+Lumba+Chiropractic" target="_blank" rel="noopener noreferrer" class="cta">See More Reviews</a>
     </div>
   </div>
 </section>
@@ -236,8 +239,8 @@ document.getElementById('year').textContent = new Date().getFullYear();
 // Sticky bar
 const stickyBar = document.getElementById('stickyBar');
 const stickyCta = document.getElementById('stickyCta');
-const isDesktop = window.matchMedia('(min-width: 900px)').matches;
-if (isDesktop && !localStorage.getItem('stickyBarDismissed')) {
+const isDesktopOrTablet = window.matchMedia('(min-width: 768px)').matches;
+if (isDesktopOrTablet && !localStorage.getItem('stickyBarDismissed')) {
   window.addEventListener('scroll', () => {
     if (window.scrollY > window.innerHeight * 0.25) stickyBar.classList.add('show');
   });
