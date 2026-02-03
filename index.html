@@ -79,6 +79,7 @@ section { padding:4rem 0; border-top: 1px solid rgba(255,255,255,0.08); }
   border-radius:999px;
   display:flex;
   gap:12px;
+  align-items:center;
   opacity:0;
   pointer-events:none;
   transition:0.4s;
@@ -134,6 +135,17 @@ section { padding:4rem 0; border-top: 1px solid rgba(255,255,255,0.08); }
   max-height:500px;
 }
 
+/* About Me */
+.about {
+  max-width: 750px;
+  margin: 0 auto;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s 0.5s forwards;
+}
+@keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
+
 /* Responsive breakpoints */
 @media (max-width: 767px) { .hero-grid { grid-template-columns:1fr; } }
 @media (min-width:768px) and (max-width:899px) { .hero-grid { grid-template-columns:1fr; } }
@@ -163,6 +175,14 @@ footer { padding:3rem 0; text-align:center; font-size:0.85rem; color:var(--muted
     </div>
   </div>
 </header>
+
+<!-- About Me Section -->
+<section id="about">
+  <div class="container about">
+    <h2>About Me</h2>
+    <p>Raised in Vancouver, BC, Dr. Lawrence Lumba earned his Kinesiology degree from the University of British Columbia and his Doctor of Chiropractic from the Canadian Memorial Chiropractic College. Now practicing in Tecumseh, Ontario, he focuses on supporting musculoskeletal health, posture, and overall movement for patients seeking to maintain an active, healthy lifestyle.</p>
+  </div>
+</section>
 
 <!-- FAQ Accordion -->
 <section id="faq">
