@@ -32,8 +32,7 @@
   },
   "openingHours": "Mo-Fr 09:00-17:00",
   "telephone": "YOUR_PHONE_NUMBER",
-  "medicalSpecialty": "Chiropractic",
-  "url": "https://drlumba.ca"
+  "medicalSpecialty": "Chiropractic"
 }
 </script>
 
@@ -67,6 +66,7 @@ h2 { font-size: 2rem; margin-bottom:1rem; text-align:center; }
 p { color: var(--muted); }
 section { padding:4rem 0; border-top: 1px solid rgba(255,255,255,0.08); opacity:0; transform: translateY(30px); transition: all 0.8s ease; }
 section.visible { opacity:1; transform: translateY(0); }
+
 .cta {
   display:inline-block;
   background: var(--accent);
@@ -81,14 +81,7 @@ section.visible { opacity:1; transform: translateY(0); }
 
 .hero-grid { display:grid; grid-template-columns:1fr 1fr; gap:clamp(1rem,5vw,3rem); align-items:center; }
 .hero-image { border-radius: 1.75rem; overflow:hidden; box-shadow:0 30px 60px rgba(0,0,0,0.45);}
-.hero-image img { width:100%; display:block; max-height:450px; object-fit:cover; }
-
-.hero-cta-wrapper { display:flex; gap:1rem; }
-@media (max-width: 767px) {
-  .hero-grid { grid-template-columns:1fr; }
-  .hero-image img { max-height:300px; }
-  .hero-cta-wrapper { flex-direction:column; gap:0.75rem; }
-}
+.hero-image img { width:100%; display:block; max-height:400px; object-fit:cover; }
 
 .sticky-bar { position:fixed; bottom:20px; left:50%; transform: translateX(-50%); background:#0f766e; color:#fff; padding:14px 22px; border-radius:999px; display:flex; gap:12px; align-items:center; opacity:0; pointer-events:none; transition:0.4s; z-index:9999; }
 .sticky-bar.show { opacity:1; pointer-events:auto; }
@@ -109,6 +102,7 @@ section.visible { opacity:1; transform: translateY(0); }
 .socials a { color: var(--muted); margin: 0 0.5rem; transition: color 0.3s ease, transform 0.2s ease; }
 .socials a:hover { color: var(--accent); transform: scale(1.1); }
 
+/* Google Reviews Section */
 #reviews { padding:4rem 0; }
 .reviews-grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap:1.5rem; margin-top:2rem; }
 .review-card { background: var(--card); padding:1.5rem; border-radius:1rem; box-shadow:0 15px 30px rgba(0,0,0,0.3); transition: transform 0.3s ease, box-shadow 0.3s ease; }
@@ -116,7 +110,21 @@ section.visible { opacity:1; transform: translateY(0); }
 .review-card p { color:#e6e2db; margin-bottom:0.75rem; }
 .review-card span { font-weight:600; color: var(--accent); }
 
-.map-container { width:100%; max-width:700px; margin:1.5rem auto; border-radius:1rem; overflow:hidden; box-shadow:0 15px 30px rgba(0,0,0,0.3); }
+.map-container { width:100%; max-width:700px; margin:1.5rem auto; border-radius:1rem; overflow:hidden; box-shadow:0 15px 30px rgba(0,0,0,0.3); display:flex; justify-content:center; }
+
+/* Mobile hero button stacking and spacing */
+@media (max-width: 767px) {
+  .hero-grid { grid-template-columns:1fr; }
+  .hero-image img { max-height:300px; }
+  #mainCta, #mainCta + .cta {
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin: 0.5rem 0; /* spacing between buttons */
+  }
+}
+
+@media (min-width:768px) and (max-width:899px) { .hero-grid { grid-template-columns:1fr; } }
 
 footer { padding:3rem 0; text-align:center; font-size:0.75rem; color:var(--muted); }
 </style>
@@ -130,9 +138,7 @@ footer { padding:3rem 0; text-align:center; font-size:0.75rem; color:var(--muted
   <div style="display:flex; gap:8px; align-items:center;">
     <a href="mailto:info@drlumba.ca?subject=New%20Patient%20Inquiry" class="sticky-secondary">Questions?</a>
     <a href="https://www.instagram.com/drlawrencelumba" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="sticky-secondary sticky-social">
-      <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
-        <path d="M7.75 2h8.5C19.55 2 22 4.45 22 7.75v8.5C22 19.55 19.55 22 16.25 22h-8.5C4.45 22 2 19.55 2 16.25v-8.5C2 4.45 4.45 2 7.75 2zm0 1.5C5.48 3.5 3.5 5.48 3.5 7.75v8.5c0 2.27 1.98 4.25 4.25 4.25h8.5c2.27 0 4.25-1.98 4.25-4.25v-8.5c0-2.27-1.98-4.25-4.25-4.25h-8.5zm8.5 2a1 1 0 110 2 1 1 0 010-2zm-4.25 1.5a5.5 5.5 0 110 11 5.5 5.5 0 010-11zm0 1.5a4 4 0 100 8 4 4 0 000-8z"/>
-      </svg>
+      <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M7.75 2h8.5C19.55 2 22 4.45 22 7.75v8.5C22 19.55 19.55 22 16.25 22h-8.5C4.45 22 2 19.55 2 16.25v-8.5C2 4.45 4.45 2 7.75 2zm0 1.5C5.48 3.5 3.5 5.48 3.5 7.75v8.5c0 2.27 1.98 4.25 4.25 4.25h8.5c2.27 0 4.25-1.98 4.25-4.25v-8.5c0-2.27-1.98-4.25-4.25-4.25h-8.5zm8.5 2a1 1 0 110 2 1 1 0 010-2zm-4.25 1.5a5.5 5.5 0 110 11 5.5 5.5 0 010-11zm0 1.5a4 4 0 100 8 4 4 0 000-8z"/></svg>
     </a>
   </div>
 </div>
@@ -142,10 +148,8 @@ footer { padding:3rem 0; text-align:center; font-size:0.75rem; color:var(--muted
     <div>
       <h1>Move with confidence. Recover with intent.</h1>
       <p>Evidence-informed chiropractic care focused on movement quality, injury recovery, and long-term resilience.</p><br>
-      <div class="hero-cta-wrapper">
-        <a href="https://beaconphysio.janeapp.com/#/staff_member/40/treatment/55" target="_blank" rel="noopener noreferrer" class="cta" id="mainCta">Book an Appointment</a>
-        <a href="#location" class="cta" id="findUsBtn">Location</a>
-      </div>
+      <a href="https://beaconphysio.janeapp.com/#/staff_member/40" target="_blank" rel="noopener noreferrer" class="cta" id="mainCta">Book an Appointment</a>
+      <a href="#location" class="cta" style="margin-left:1rem;">Find Us</a>
     </div>
     <div class="hero-image">
       <img src="8D252B37-9EA6-4A77-B9AA-A6987D901BE3.jpg" alt="Dr. Lawrence Lumba providing chiropractic care in Windsor Ontario">
@@ -184,16 +188,16 @@ footer { padding:3rem 0; text-align:center; font-size:0.75rem; color:var(--muted
 </section>
 
 <section id="location">
-  <div class="container">
+  <div class="container" style="text-align:center;">
     <h2>Location</h2>
-    <p>Visit me at Beacon Physiotherapy, 1614 Lesperance Rd, Tecumseh, ON.</p>
+    <p>Visit me at <strong>Beacon Physiotherapy, 1614 Lesperance Rd, Tecumseh, ON</strong>.</p>
     <div class="map-container">
-      <a href="https://www.google.com/maps/place/1614+Lesperance+Rd,+Tecumseh,+ON+N8N+1Y3" target="_blank" rel="noopener noreferrer">
+      <a href="https://maps.google.com/?q=1614+Lesperance+Rd,+Tecumseh,+ON" target="_blank" rel="noopener noreferrer">
         <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2913.567!2d-83.885595!3d42.306186!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x883a6aae1234567%3A0xabcdef1234567890!2s1614+Lesperance+Rd,+Tecumseh,+ON+N8N+1Y3,+Canada!5e0!3m2!1sen!2sca!4v1700000000000"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2913.567!2d-83.885595!3d42.306186!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x883a6aae1234567%3A0xabcdef1234567890!2sBeacon+Physiotherapy,+1614+Lesperance+Rd,+Tecumseh,+ON+N8N+1Y3,+Canada!5e0!3m2!1sen!2sca!4v1700000000000"
           width="100%"
           height="300"
-          style="border:0;"
+          style="border:0; border-radius:1rem;"
           allowfullscreen=""
           loading="lazy"
           referrerpolicy="no-referrer-when-downgrade">
@@ -235,13 +239,11 @@ document.getElementById('year').textContent = new Date().getFullYear();
 const stickyBar = document.getElementById('stickyBar');
 const stickyCta = document.getElementById('stickyCta');
 const isDesktop = window.matchMedia('(min-width: 900px)').matches;
-
 if (isDesktop && !localStorage.getItem('stickyBarDismissed')) {
   window.addEventListener('scroll', () => {
     if (window.scrollY > window.innerHeight * 0.25) stickyBar.classList.add('show');
   });
 }
-
 stickyCta.addEventListener('click', () => {
   stickyBar.classList.remove('show');
   localStorage.setItem('stickyBarDismissed', 'true');
