@@ -83,6 +83,13 @@ section.visible { opacity:1; transform: translateY(0); }
 .hero-image { border-radius: 1.75rem; overflow:hidden; box-shadow:0 30px 60px rgba(0,0,0,0.45);}
 .hero-image img { width:100%; display:block; max-height:450px; object-fit:cover; }
 
+.hero-cta-wrapper { display:flex; gap:1rem; }
+@media (max-width: 767px) {
+  .hero-grid { grid-template-columns:1fr; }
+  .hero-image img { max-height:300px; }
+  .hero-cta-wrapper { flex-direction:column; gap:0.75rem; }
+}
+
 .sticky-bar { position:fixed; bottom:20px; left:50%; transform: translateX(-50%); background:#0f766e; color:#fff; padding:14px 22px; border-radius:999px; display:flex; gap:12px; align-items:center; opacity:0; pointer-events:none; transition:0.4s; z-index:9999; }
 .sticky-bar.show { opacity:1; pointer-events:auto; }
 .sticky-secondary { background: rgba(255,255,255,0.15); color:#fff; padding:8px 14px; border-radius:999px; text-decoration:none; display:flex; align-items:center; }
@@ -102,7 +109,6 @@ section.visible { opacity:1; transform: translateY(0); }
 .socials a { color: var(--muted); margin: 0 0.5rem; transition: color 0.3s ease, transform 0.2s ease; }
 .socials a:hover { color: var(--accent); transform: scale(1.1); }
 
-/* Google Reviews Section */
 #reviews { padding:4rem 0; }
 .reviews-grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap:1.5rem; margin-top:2rem; }
 .review-card { background: var(--card); padding:1.5rem; border-radius:1rem; box-shadow:0 15px 30px rgba(0,0,0,0.3); transition: transform 0.3s ease, box-shadow 0.3s ease; }
@@ -111,9 +117,6 @@ section.visible { opacity:1; transform: translateY(0); }
 .review-card span { font-weight:600; color: var(--accent); }
 
 .map-container { width:100%; max-width:700px; margin:1.5rem auto; border-radius:1rem; overflow:hidden; box-shadow:0 15px 30px rgba(0,0,0,0.3); }
-
-@media (max-width: 767px) { .hero-grid { grid-template-columns:1fr; } .hero-image img { max-height:300px; } }
-@media (min-width:768px) and (max-width:899px) { .hero-grid { grid-template-columns:1fr; } }
 
 footer { padding:3rem 0; text-align:center; font-size:0.75rem; color:var(--muted); }
 </style>
@@ -139,8 +142,10 @@ footer { padding:3rem 0; text-align:center; font-size:0.75rem; color:var(--muted
     <div>
       <h1>Move with confidence. Recover with intent.</h1>
       <p>Evidence-informed chiropractic care focused on movement quality, injury recovery, and long-term resilience.</p><br>
-      <a href="https://beaconphysio.janeapp.com/#/staff_member/40" target="_blank" rel="noopener noreferrer" class="cta" id="mainCta">Book an Appointment</a>
-      <a href="#location" class="cta" style="margin-left:1rem;">Find Us</a>
+      <div class="hero-cta-wrapper">
+        <a href="https://beaconphysio.janeapp.com/#/staff_member/40/treatment/55" target="_blank" rel="noopener noreferrer" class="cta" id="mainCta">Book an Appointment</a>
+        <a href="#location" class="cta" id="findUsBtn">Location</a>
+      </div>
     </div>
     <div class="hero-image">
       <img src="8D252B37-9EA6-4A77-B9AA-A6987D901BE3.jpg" alt="Dr. Lawrence Lumba providing chiropractic care in Windsor Ontario">
@@ -183,9 +188,9 @@ footer { padding:3rem 0; text-align:center; font-size:0.75rem; color:var(--muted
     <h2>Location</h2>
     <p>Visit me at Beacon Physiotherapy, 1614 Lesperance Rd, Tecumseh, ON.</p>
     <div class="map-container">
-      <a href="https://maps.app.goo.gl/w8aXTHs3XXQDzpaAA" rel="noopener noreferrer">
+      <a href="https://www.google.com/maps/place/1614+Lesperance+Rd,+Tecumseh,+ON+N8N+1Y3" target="_blank" rel="noopener noreferrer">
         <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2913.567!2d-83.885595!3d42.306186!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x883a6aae1234567%3A0xabcdef1234567890!2sBeacon+Physiotherapy,+1614+Lesperance+Rd,+Tecumseh,+ON+N8N+1Y3,+Canada!5e0!3m2!1sen!2sca!4v1700000000000"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2913.567!2d-83.885595!3d42.306186!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x883a6aae1234567%3A0xabcdef1234567890!2s1614+Lesperance+Rd,+Tecumseh,+ON+N8N+1Y3,+Canada!5e0!3m2!1sen!2sca!4v1700000000000"
           width="100%"
           height="300"
           style="border:0;"
