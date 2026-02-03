@@ -85,7 +85,7 @@ section.visible { opacity:1; transform: translateY(0); }
 .hero-image img { width:100%; display:block; max-height:400px; object-fit:cover; }
 .hero-grid .cta + .cta { margin-left: 1rem; }
 
-/* Sticky bar - subtle, soft bounce, narrow mobile width */
+/* Sticky bar */
 .sticky-bar {
   position: fixed;
   bottom: -60px;
@@ -117,13 +117,7 @@ section.visible { opacity:1; transform: translateY(0); }
   80%  { bottom: 10px; }
   100% { bottom: 12px; }
 }
-.sticky-buttons {
-  display: flex;
-  gap: 6px;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-}
+.sticky-buttons { display:flex; gap:6px; align-items:center; justify-content:center; width:100%; }
 .sticky-bar .cta, .sticky-secondary {
   padding: 0.5rem 1rem;
   font-size: 0.85rem;
@@ -140,19 +134,10 @@ section.visible { opacity:1; transform: translateY(0); }
   justify-content: center;
   align-items: center;
 }
-.sticky-bar .sticky-social svg { display:block; }
-.sticky-bar .pulse, .sticky-social.pulse { animation: none; }
 
 /* Mobile-specific adjustments */
 @media (max-width:767px){
-  .sticky-bar {
-    flex-direction: row;
-    bottom: -50px;
-    padding: 6px 10px;
-    font-size: 0.85rem;
-    width: 80%;
-    max-width: 320px;
-  }
+  .sticky-bar { flex-direction: row; bottom: -50px; padding: 6px 10px; font-size: 0.85rem; width: 80%; max-width: 320px; }
   .sticky-buttons { flex-direction: row; gap: 4px; }
   .sticky-bar .cta, .sticky-secondary { padding: 0.45rem 0.8rem; font-size: 0.8rem; }
 }
@@ -201,12 +186,7 @@ footer { padding:3rem 0; text-align:center; font-size:0.75rem; color:var(--muted
 <div class="sticky-bar" id="stickyBar" role="region" aria-label="Booking Call to Action">
   <span>Ready to book?</span>
   <a href="https://beaconphysio.janeapp.com/#/staff_member/40/treatment/55" target="_blank" rel="noopener noreferrer" class="cta" id="stickyCta">Book Now</a>
-  <div style="display:flex; gap:8px; align-items:center;">
-    <a href="mailto:info@drlumba.ca?subject=New%20Patient%20Inquiry" class="sticky-secondary">Questions?</a>
-    <a href="https://www.instagram.com/drlawrencelumba" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="sticky-secondary sticky-social">
-      <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M7.75 2h8.5C19.55 2 22 4.45 22 7.75v8.5C22 19.55 19.55 22 16.25 22h-8.5C4.45 22 2 19.55 2 16.25v-8.5C2 4.45 4.45 2 7.75 2zm0 1.5C5.48 3.5 3.5 5.48 3.5 7.75v8.5c0 2.27 1.98 4.25 4.25 4.25h8.5c2.27 0 4.25-1.98 4.25-4.25v-8.5c0-2.27-1.98-4.25-4.25-4.25h-8.5zm8.5 2a1 1 0 110 2 1 1 0 010-2zm-4.25 1.5a5.5 5.5 0 110 11 5.5 5.5 0 010-11zm0 1.5a4 4 0 100 8 4 4 0 000-8z"/></svg>
-    </a>
-  </div>
+  <a href="mailto:info@drlumba.ca?subject=New%20Patient%20Inquiry" class="sticky-secondary">Questions?</a>
 </div>
 
 <header>
@@ -222,7 +202,6 @@ footer { padding:3rem 0; text-align:center; font-size:0.75rem; color:var(--muted
     </div>
   </div>
 </header>
-
 <section id="about">
   <div class="container about">
     <h2>About Me</h2>
@@ -272,7 +251,6 @@ footer { padding:3rem 0; text-align:center; font-size:0.75rem; color:var(--muted
   </div>
 </section>
 
-<!-- Reviews -->
 <section id="reviews">
   <div class="container">
     <h2>What Patients Say</h2>
@@ -300,59 +278,64 @@ footer { padding:3rem 0; text-align:center; font-size:0.75rem; color:var(--muted
 <script>
 document.getElementById('year').textContent = new Date().getFullYear();
 
-// ===== Sticky Bar Soft Bounce, Auto-Fade, Single Reappear (Mobile) =====
+// ===== Sticky Bar =====
 const stickyBar = document.getElementById('stickyBar');
 const stickyCta = document.getElementById('stickyCta');
 let mobileTimeout;
 let mobileScrolledOnce = false;
 
-// Show sticky bar
-function showStickyBar() { 
-  stickyBar.classList.add('show'); 
+// Show sticky bar function
+function showStickyBar() {
+  stickyBar.classList.add('show');
   if(mobileTimeout) clearTimeout(mobileTimeout);
   if(window.matchMedia('(max-width:767px)').matches){
-    mobileTimeout = setTimeout(()=>{ stickyBar.classList.remove('show'); }, 8000);
+    mobileTimeout = setTimeout(()=>{ stickyBar.classList.remove('show'); }, 12000); // stays 12s on mobile
   }
 }
 
 // Initialize sticky bar behavior
 function initStickyBar() {
   if(localStorage.getItem('stickyBarDismissed')) return;
-  if(window.matchMedia('(max-width:767px)').matches) showStickyBar();
-  else window.addEventListener('scroll', ()=>{ 
-    if(window.scrollY > window.innerHeight*0.25) showStickyBar(); 
-  });
+
+  if(window.matchMedia('(max-width:767px)').matches) {
+    showStickyBar(); // mobile shows immediately
+  } else {
+    window.addEventListener('scroll', () => {
+      if(window.scrollY > window.innerHeight*0.25) showStickyBar();
+    });
+  }
 }
 
-// Permanently dismiss on Book Now click
+// Permanently dismiss sticky bar on click
 stickyCta.addEventListener('click', ()=>{
   stickyBar.classList.remove('show');
   localStorage.setItem('stickyBarDismissed','true');
 });
 
-// Mobile: Re-show once on scroll after auto-fade
+// Mobile: re-show once on scroll after auto-fade
 window.addEventListener('scroll', ()=>{
   if(!localStorage.getItem('stickyBarDismissed') && window.matchMedia('(max-width:767px)').matches){
     if(window.scrollY > 100 && !stickyBar.classList.contains('show') && !mobileScrolledOnce){
       showStickyBar();
-      mobileScrolledOnce = true; // only once per session
+      mobileScrolledOnce = true;
     }
   }
 });
 
 // Re-check on resize
 window.addEventListener('resize', ()=>{
-  if(!localStorage.getItem('stickyBarDismissed') && window.matchMedia('(max-width:767px)').matches) showStickyBar();
+  if(!localStorage.getItem('stickyBarDismissed') && window.matchMedia('(max-width:767px)').matches){
+    showStickyBar();
+  }
 });
 
-// Initialize on page load
-initStickyBar();
-
-// Accordion auto-close
+// Accordion auto-close behavior
 document.querySelectorAll('.accordion').forEach((accordion) => {
   accordion.querySelectorAll('details').forEach((detail) => {
     detail.addEventListener('toggle', () => {
-      if (detail.open) accordion.querySelectorAll('details').forEach((other) => { if(other!==detail) other.removeAttribute('open'); });
+      if(detail.open) accordion.querySelectorAll('details').forEach((other)=>{
+        if(other!==detail) other.removeAttribute('open');
+      });
     });
   });
 });
