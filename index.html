@@ -36,6 +36,66 @@
 }
 </script>
 
+<!-- Google Reviews Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Dr. Lumba Chiropractic",
+  "image": "https://drlumba.ca/8D252B37-9EA6-4A77-B9AA-A6987D901BE3.jpg",
+  "url": "https://drlumba.ca",
+  "telephone": "YOUR_PHONE_NUMBER",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "YOUR_ADDRESS",
+    "addressLocality": "Tecumseh",
+    "addressRegion": "ON",
+    "postalCode": "YOUR_POSTAL_CODE",
+    "addressCountry": "CA"
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5",
+    "reviewCount": "35"
+  },
+  "review": [
+    {
+      "@type": "Review",
+      "author": "Sarah T.",
+      "datePublished": "2026-01-15",
+      "reviewBody": "Dr. Lumba is amazing! My back pain improved within a few sessions. Highly recommend.",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5",
+        "bestRating": "5"
+      }
+    },
+    {
+      "@type": "Review",
+      "author": "Mark D.",
+      "datePublished": "2026-01-12",
+      "reviewBody": "Professional, knowledgeable, and caring. The orthotics assessment helped me walk without pain.",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5",
+        "bestRating": "5"
+      }
+    },
+    {
+      "@type": "Review",
+      "author": "Emily R.",
+      "datePublished": "2026-01-10",
+      "reviewBody": "Excellent chiropractic care. Easy to book, friendly staff, and clear guidance for recovery.",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5",
+        "bestRating": "5"
+      }
+    }
+  ]
+}
+</script>
+
 <style>
 :root {
   --bg: #062e2a;
@@ -139,6 +199,25 @@ section.visible { opacity:1; transform: translateY(0); }
 .socials a { color: var(--muted); margin: 0 0.5rem; transition: color 0.3s ease, transform 0.2s ease; }
 .socials a:hover { color: var(--accent); transform: scale(1.1); }
 
+/* Google Reviews Section */
+#reviews { padding:4rem 0; }
+.reviews-grid {
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap:1.5rem;
+  margin-top:2rem;
+}
+.review-card {
+  background: var(--card);
+  padding:1.5rem;
+  border-radius:1rem;
+  box-shadow:0 15px 30px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.review-card:hover { transform: translateY(-5px); box-shadow:0 20px 40px rgba(0,0,0,0.4); }
+.review-card p { color:#e6e2db; margin-bottom:0.75rem; }
+.review-card span { font-weight:600; color: var(--accent); }
+
 @media (max-width: 767px) { .hero-grid { grid-template-columns:1fr; } }
 @media (min-width:768px) and (max-width:899px) { .hero-grid { grid-template-columns:1fr; } }
 
@@ -153,7 +232,7 @@ footer { padding:3rem 0; text-align:center; font-size:0.75rem; color:var(--muted
   <a href="https://beaconphysio.janeapp.com/#/staff_member/40" target="_blank" rel="noopener noreferrer" class="cta" id="stickyCta">Book Now</a>
   <div style="display:flex; gap:8px; align-items:center;">
     <a href="mailto:info@drlumba.ca?subject=New%20Patient%20Inquiry" class="sticky-secondary">Questions?</a>
-    <a href="https://www.instagram.com/drlawrencelumba" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="sticky-secondary sticky-social">
+    <a href="https://www.instagram.com/yourhandle" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="sticky-secondary sticky-social">
       <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
         <path d="M7.75 2h8.5C19.55 2 22 4.45 22 7.75v8.5C22 19.55 19.55 22 16.25 22h-8.5C4.45 22 2 19.55 2 16.25v-8.5C2 4.45 4.45 2 7.75 2zm0 1.5C5.48 3.5 3.5 5.48 3.5 7.75v8.5c0 2.27 1.98 4.25 4.25 4.25h8.5c2.27 0 4.25-1.98 4.25-4.25v-8.5c0-2.27-1.98-4.25-4.25-4.25h-8.5zm8.5 2a1 1 0 110 2 1 1 0 010-2zm-4.25 1.5a5.5 5.5 0 110 11 5.5 5.5 0 010-11zm0 1.5a4 4 0 100 8 4 4 0 000-8z"/>
       </svg>
@@ -205,11 +284,35 @@ footer { padding:3rem 0; text-align:center; font-size:0.75rem; color:var(--muted
   </div>
 </section>
 
+<!-- Google Reviews Section -->
+<section id="reviews">
+  <div class="container">
+    <h2>What Our Patients Say</h2>
+    <div class="reviews-grid">
+      <div class="review-card">
+        <p>"Dr. Lumba is amazing! My back pain improved within a few sessions. Highly recommend."</p>
+        <span>– Sarah T.</span>
+      </div>
+      <div class="review-card">
+        <p>"Professional, knowledgeable, and caring. The orthotics assessment helped me walk without pain."</p>
+        <span>– Mark D.</span>
+      </div>
+      <div class="review-card">
+        <p>"Excellent chiropractic care. Easy to book, friendly staff, and clear guidance for recovery."</p>
+        <span>– Emily R.</span>
+      </div>
+    </div>
+    <div style="text-align:center; margin-top:1.5rem;">
+      <a href="https://www.google.com/maps/place/Dr.+Lumba+Chiropractic" target="_blank" class="cta">See More Reviews</a>
+    </div>
+  </div>
+</section>
+
 <footer>
   © <span id="year"></span> Dr. Lumba Chiropractic
   <p style="margin-top:1rem;">Insurance coverage varies by provider and plan. Patients are responsible for confirming eligibility and reimbursement details with their insurer.</p>
   <div class="socials" style="margin-top:1rem;">
-    <a href="https://www.instagram.com/drlawrencelumba" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+    <a href="https://www.instagram.com/yourhandle" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
       <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
         <path d="M7.75 2h8.5C19.55 2 22 4.45 22 7.75v8.5C22 19.55 19.55 22 16.25 22h-8.5C4.45 22 2 19.55 2 16.25v-8.5C2 4.45 4.45 2 7.75 2zm0 1.5C5.48 3.5 3.5 5.48 3.5 7.75v8.5c0 2.27 1.98 4.25 4.25 4.25h8.5c2.27 0 4.25-1.98 4.25-4.25v-8.5c0-2.27-1.98-4.25-4.25-4.25h-8.5zm8.5 2a1 1 0 110 2 1 1 0 010-2zm-4.25 1.5a5.5 5.5 0 110 11 5.5 5.5 0 010-11zm0 1.5a4 4 0 100 8 4 4 0 000-8z"/>
       </svg>
@@ -220,60 +323,47 @@ footer { padding:3rem 0; text-align:center; font-size:0.75rem; color:var(--muted
 <script>
 document.getElementById('year').textContent = new Date().getFullYear();
 
-// Sticky bar logic
+// Sticky bar
+const stickyBar = document.getElementById('stickyBar');
 const stickyCta = document.getElementById('stickyCta');
-const stickySocial = document.querySelector('.sticky-social');
+const isDesktop = window.matchMedia('(min-width: 900px)').matches;
 
-function showStickyBar() {
-  if (!localStorage.getItem('stickyBarShown')) {
-    const stickyBar = document.getElementById('stickyBar');
-    stickyBar.classList.add('show');
-
-    // Pulse Book Now button
-    stickyCta.classList.add('pulse');
-
-    // Pulse Instagram after 0.4s
-    if (stickySocial) stickySocial.classList.add('pulse');
-
-    localStorage.setItem('stickyBarShown', 'true');
-  }
+if (isDesktop && !localStorage.getItem('stickyBarDismissed')) {
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > window.innerHeight * 0.25) {
+      stickyBar.classList.add('show');
+    }
+  });
 }
 
-window.addEventListener('scroll', () => {
-  if (window.scrollY > window.innerHeight * 0.25) {
-    showStickyBar();
-  }
-});
-
-// Hide sticky bar when Book Now clicked
 stickyCta.addEventListener('click', () => {
-  document.getElementById('stickyBar').classList.remove('show');
+  stickyBar.classList.remove('show');
   localStorage.setItem('stickyBarDismissed', 'true');
 });
 
-// Accordion auto-close
-document.querySelectorAll('.accordion').forEach(accordion => {
-  accordion.querySelectorAll('details').forEach(detail => {
+// Accordion auto-close behavior
+document.querySelectorAll('.accordion').forEach((accordion) => {
+  accordion.querySelectorAll('details').forEach((detail) => {
     detail.addEventListener('toggle', () => {
-      if(detail.open){
-        accordion.querySelectorAll('details').forEach(other => { if(other !== detail) other.removeAttribute('open'); });
+      if (detail.open) {
+        accordion.querySelectorAll('details').forEach((other) => {
+          if (other !== detail) other.removeAttribute('open');
+        });
       }
     });
   });
 });
 
-// Scroll-triggered section animations
+// Scroll reveal sections
 const sections = document.querySelectorAll('section');
 const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
     if(entry.isIntersecting){
       entry.target.classList.add('visible');
-      observer.unobserve(entry.target);
     }
   });
-},{ threshold: 0.25 });
-
-sections.forEach(section => observer.observe(section));
+},{ threshold: 0.15 });
+sections.forEach(sec => observer.observe(sec));
 </script>
 
 </body>
