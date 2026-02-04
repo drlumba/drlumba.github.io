@@ -177,6 +177,23 @@ section.visible { opacity:1; transform: translateY(0); }
 
 @media (min-width:768px) and (max-width:899px) { .hero-grid { grid-template-columns:1fr; } }
 
+/* Tighter pill-style button group with subtle hover lift */
+.hero-grid > div:first-child {
+  text-align: center;
+}
+
+.hero-grid > div:first-child .cta {
+  display: inline-flex;
+  margin: 0.35rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.hero-grid > div:first-child .cta:hover {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 8px 15px rgba(31, 191, 167, 0.35);
+}
+
+  
 footer { padding:3rem 0; text-align:center; font-size:0.75rem; color:var(--muted); }
 </style>
 </head>
