@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Dr. Alex Lumba, Chiropractor in Windsor & Tecumseh, ON</title>
+
+<meta name="description" content="Dr. Alex Lumba provides evidence-informed chiropractic care in Windsor and Tecumseh, Ontario. Convenient appointments at Beacon Physiotherapy and Apex Performance & Wellness.">
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --bg:#0b0f14;
+  --card:#111827;
+  --text:#ffffff;
+  --muted:#9ca3af;
+  --accent:#1fbfa7;
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+
+body{
+  font-family:Inter,sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.6;
+}
+
+.container{
+  max-width:1000px;
+  margin:auto;
+  padding:0 20px;
+}
+
+section{padding:80px 0;}
+
+h1{
+  font-size:clamp(2rem,5vw,3rem);
+  margin-bottom:20px;
+}
+
+h2{text-align:center;margin-bottom:40px;}
+
+p{color:var(--muted);}
+
+.cta{
+  display:inline-block;
+  background:var(--accent);
+  color:#000;
+  padding:14px 26px;
+  border-radius:999px;
+  text-decoration:none;
+  font-weight:600;
+}
+
+.cta:hover{
+  transform:translateY(-3px);
+  box-shadow:0 10px 25px rgba(31,191,167,0.3);
+}
+
+/* HERO */
+.hero{
+  text-align:center;
+}
+
+/* LOCATION CARDS */
+.locations{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:30px;
+}
+
+.card{
+  background:var(--card);
+  padding:30px;
+  border-radius:15px;
+  text-align:center;
+}
+
+footer{
+  text-align:center;
+  padding:40px 0;
+  font-size:0.8rem;
+  color:var(--muted);
+}
+
+@media(max-width:768px){
+  .locations{grid-template-columns:1fr;}
+}
+</style>
+</head>
+
+<body>
+
+<nav style="text-align:center;padding:20px 0;">
+  <a href="index.html" style="margin:0 12px;color:#9ca3af;text-decoration:none;">Home</a>
+  <a href="chiropractor-windsor.html" style="margin:0 12px;color:#9ca3af;text-decoration:none;">Windsor</a>
+  <a href="chiropractor-tecumseh.html" style="margin:0 12px;color:#9ca3af;text-decoration:none;">Tecumseh</a>
+  <a href="book.html" style="margin:0 12px;color:#1fbfa7;text-decoration:none;font-weight:700;">Book</a>
+</nav>
+
+<section class="container hero">
+  <h1>Dr. Alex Lumba, Chiropractor</h1>
+  <p>
+    Evidence-informed chiropractic care focused on movement, recovery, and long-term health.
+    Serving patients in Windsor–Essex at Beacon Physiotherapy and Apex Performance & Wellness.
+  </p>
+  <br>
+  <a href="book.html" class="cta">Book with Dr. Alex</a>
+</section>
+
+<section class="container">
+  <h2>Locations</h2>
+
+  <div class="locations">
+
+    <div class="card">
+      <h3>Tecumseh</h3>
+      <p>Beacon Physiotherapy<br>
+      1614 Lesperance Rd</p>
+      <br>
+      <a href="book.html" class="cta">Book Here</a>
+    </div>
+
+    <div class="card">
+      <h3>Windsor</h3>
+      <p>Apex Performance & Wellness<br>
+      4510 Rhodes Dr</p>
+      <br>
+      <a href="book.html" class="cta">Book Here</a>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+© <span id="year"></span> Dr. Alex Lumba — Chiropractor in Windsor & Tecumseh
+</footer>
+
+<script>
+document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
