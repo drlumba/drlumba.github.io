@@ -1,10 +1,3 @@
-<nav style="text-align:center; padding:20px 0;">
-  <a href="index.html" style="margin:0 12px; text-decoration:none; font-weight:600; color:#1fbfa7;">Home</a>
-  <a href="chiropractor-windsor.html" style="margin:0 12px; text-decoration:none; font-weight:600; color:#1fbfa7;">Windsor</a>
-  <a href="chiropractor-tecumseh.html" style="margin:0 12px; text-decoration:none; font-weight:600; color:#1fbfa7;">Tecumseh</a>
-  <a href="book.html" style="margin:0 12px; text-decoration:none; font-weight:700; color:#1fbfa7;">Book</a>
-</nav>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,17 +5,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Chiropractor in Windsor & Tecumseh, ON | Dr. Lawrence Lumba</title>
-<meta name="description" content="Evidence-informed chiropractic care in Windsor and Tecumseh, Ontario. Book online today. Convenient locations.">
+<meta name="description" content="Evidence-informed chiropractic care in Windsor and Tecumseh, Ontario. Book online today. Convenient locations in both cities.">
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 
 <style>
 :root{
-  --bg:#0f172a;
-  --card:#111c2e;
+  --bg:#0b0f14;
+  --card:#111827;
   --text:#ffffff;
-  --muted:#cbd5e1;
-  --accent:#1fbfa7;
+  --muted:#9ca3af;
+  --accent:#1fbfa7; /* industrial green */
 }
 
 *{box-sizing:border-box;margin:0;padding:0}
@@ -52,7 +45,6 @@ h1{
 h2{
   text-align:center;
   margin-bottom:40px;
-  font-size:2rem;
 }
 
 p{
@@ -72,7 +64,25 @@ p{
 
 .cta:hover{
   transform:translateY(-3px);
-  box-shadow:0 10px 25px rgba(31,191,167,0.4);
+  box-shadow:0 10px 25px rgba(31,191,167,0.3);
+}
+
+/* NAV */
+nav{
+  text-align:center;
+  padding:20px 0;
+  border-bottom:1px solid rgba(255,255,255,0.05);
+}
+
+nav a{
+  margin:0 15px;
+  text-decoration:none;
+  font-weight:600;
+  color:var(--muted);
+}
+
+nav a:hover{
+  color:var(--accent);
 }
 
 /* HERO */
@@ -88,7 +98,7 @@ p{
   border-radius:20px;
 }
 
-/* TRUST SECTION */
+/* TRUST */
 .trust{
   background:var(--card);
   border-radius:20px;
@@ -110,11 +120,6 @@ p{
   text-align:center;
 }
 
-/* BOOK SECTION */
-.book{
-  text-align:center;
-}
-
 /* FAQ */
 .faq details{
   background:var(--card);
@@ -128,6 +133,7 @@ p{
   font-weight:600;
 }
 
+/* FOOTER */
 footer{
   text-align:center;
   padding:40px 0;
@@ -147,13 +153,21 @@ footer{
 
 <body>
 
+<!-- NAVIGATION -->
+<nav>
+  <a href="index.html">Home</a>
+  <a href="chiropractor-windsor.html">Windsor</a>
+  <a href="chiropractor-tecumseh.html">Tecumseh</a>
+  <a href="book.html" style="color:var(--accent);">Book Online</a>
+</nav>
+
 <!-- HERO -->
 <section class="container hero">
   <div>
-    <h1>Tecumseh & Windsor Chiropractic Care</h1>
+    <h1>Windsor & Tecumseh Chiropractic Care</h1>
     <p>
       Evidence-informed treatment focused on movement, recovery, and long-term resilience.
-      Convenient locations in Windsor and Tecumseh.
+      Serving patients across Windsor–Essex with convenient booking.
     </p>
     <br>
     <a href="book.html" class="cta">Book Appointment</a>
@@ -169,18 +183,18 @@ footer{
   <div class="trust">
     <h2>Why Patients Choose Us</h2>
     <p>
-      ✔ Convenient Windsor & Tecumseh locations<br>
+      ✔ Windsor & Tecumseh locations<br>
       ✔ Direct online booking<br>
-      ✔ Evidence-based approach<br>
-      ✔ Focus on movement & performance<br>
-      ✔ Custom orthotics when clinically indicated
+      ✔ Evidence-based care<br>
+      ✔ Movement & performance focus<br>
+      ✔ Custom orthotics when indicated
     </p>
   </div>
 </section>
 
 <!-- LOCATIONS -->
 <section class="container">
-  <h2>Locations</h2>
+  <h2>Our Locations</h2>
 
   <div class="locations">
 
@@ -188,15 +202,27 @@ footer{
       <h3>Tecumseh</h3>
       <p>Beacon Physiotherapy<br>
       1614 Lesperance Rd</p>
+      <br>
+      <a href="chiropractor-tecumseh.html" class="cta">View Tecumseh Page</a>
     </div>
 
     <div class="location-card">
       <h3>Windsor</h3>
       <p>Apex Performance & Wellness<br>
       4510 Rhodes Dr</p>
+      <br>
+      <a href="chiropractor-windsor.html" class="cta">View Windsor Page</a>
     </div>
 
   </div>
+</section>
+
+<!-- BOOK -->
+<section class="container" style="text-align:center;">
+  <h2>Ready to Book?</h2>
+  <p>Online booking takes less than 60 seconds.</p>
+  <br>
+  <a href="book.html" class="cta">Book Now</a>
 </section>
 
 <!-- FAQ -->
@@ -205,12 +231,12 @@ footer{
 
   <details>
     <summary>Do I need a referral?</summary>
-    <p>No referral is required.</p>
+    <p>No referral is required to book.</p>
   </details>
 
   <details>
     <summary>Will I receive treatment on my first visit?</summary>
-    <p>Yes, if it is clinically appropriate and safe.</p>
+    <p>Yes, if clinically appropriate.</p>
   </details>
 
   <details>
