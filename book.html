@@ -4,18 +4,27 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Book an Appointment | Dr. Lawrence Lumba Chiropractic</title>
-
-<meta name="description" content="Book your chiropractic appointment in Windsor or Tecumseh. Choose your location and schedule instantly online. No referral required.">
+<title>Book Appointment | Dr. Lawrence Lumba Chiropractic</title>
+<meta name="description" content="Book your chiropractic appointment in Windsor or Tecumseh, Ontario. Choose your location below.">
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 
 <style>
+:root{
+  --bg:#0f172a;
+  --card:#111c2e;
+  --text:#ffffff;
+  --muted:#cbd5e1;
+  --accent:#1fbfa7;
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+
 body{
-  margin:0;
   font-family:Inter,sans-serif;
-  background:#0f172a;
-  color:white;
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.6;
 }
 
 .container{
@@ -26,127 +35,133 @@ body{
 }
 
 h1{
-  font-size:2.6rem;
-  margin-bottom:15px;
+  font-size:clamp(2rem,5vw,3rem);
+  margin-bottom:20px;
 }
 
-.subtext{
-  opacity:0.8;
-  font-size:1.1rem;
-  max-width:600px;
-  margin:0 auto 40px auto;
+p{
+  color:var(--muted);
+  margin-bottom:40px;
+}
+
+.location-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:30px;
+  margin-bottom:40px;
 }
 
 .card{
-  background:rgba(255,255,255,0.05);
-  padding:40px 30px;
+  background:var(--card);
+  padding:40px;
   border-radius:20px;
-  margin:30px 0;
   transition:0.2s;
 }
 
 .card:hover{
-  transform:translateY(-4px);
-  background:rgba(255,255,255,0.07);
+  transform:translateY(-5px);
+  box-shadow:0 15px 35px rgba(0,0,0,0.4);
 }
 
 .cta{
   display:inline-block;
-  background:#1fbfa7;
-  color:black;
-  padding:15px 28px;
+  background:var(--accent);
+  color:#000;
+  padding:14px 26px;
   border-radius:999px;
   text-decoration:none;
-  font-weight:700;
-  margin-top:15px;
+  font-weight:600;
+  margin-top:20px;
   transition:0.2s;
 }
 
 .cta:hover{
-  transform:scale(1.05);
+  transform:translateY(-3px);
+  box-shadow:0 10px 25px rgba(31,191,167,0.4);
 }
 
-.benefits{
-  margin-top:40px;
-  opacity:0.85;
-  font-size:0.95rem;
-  line-height:1.8;
-}
-
-nav{
-  text-align:center;
-  padding:15px 0;
-  background:rgba(255,255,255,0.05);
-}
-
-nav a{
-  color:white;
+.back{
+  display:inline-block;
+  margin-top:30px;
+  color:var(--muted);
   text-decoration:none;
-  margin:0 15px;
-  font-weight:600;
-}
-
-nav a:hover{
-  color:#1fbfa7;
-}
-
-.trust{
-  margin-top:50px;
   font-size:0.9rem;
-  opacity:0.7;
+}
+
+.back:hover{
+  color:var(--accent);
+}
+
+footer{
+  text-align:center;
+  padding:40px 0;
+  font-size:0.8rem;
+  color:var(--muted);
+}
+
+/* MOBILE */
+@media(max-width:768px){
+  .location-grid{
+    grid-template-columns:1fr;
+  }
 }
 </style>
 </head>
 
 <body>
 
-<nav>
-  <a href="index.html">Home</a>
-  <a href="services.html">Services</a>
-  <a href="book.html">Book</a>
-</nav>
-
 <div class="container">
 
-<h1>Book Your Appointment</h1>
+  <h1>Book Your Appointment</h1>
 
-<p class="subtext">
-Choose your location below to schedule instantly. Secure online booking with immediate confirmation.
-</p>
+  <p>
+    Choose your location below. Online booking takes less than 60 seconds.
+    If you are unsure, select the location closest to you.
+  </p>
 
-<div class="card">
-  <h2>Beacon Physiotherapy – Tecumseh</h2>
-  <p>1614 Lesperance Rd</p>
-  <a class="cta"
-     href="https://beaconphysio.janeapp.com/#/staff_member/40/treatment/55"
-     target="_blank">
-     Book at Beacon
-  </a>
+  <div class="location-grid">
+
+    <div class="card">
+      <h2>Tecumseh</h2>
+      <p>
+        Beacon Physiotherapy<br>
+        1614 Lesperance Rd
+      </p>
+
+      <a href="https://beaconphysio.janeapp.com/#/staff_member/40/treatment/55"
+         target="_blank"
+         class="cta">
+         Book at Beacon
+      </a>
+    </div>
+
+    <div class="card">
+      <h2>Windsor</h2>
+      <p>
+        Apex Performance & Wellness<br>
+        4510 Rhodes Dr
+      </p>
+
+      <a href="https://apexperformancewellness.janeapp.com/#/staff_member/26/treatment/1"
+         target="_blank"
+         class="cta">
+         Book at Apex
+      </a>
+    </div>
+
+  </div>
+
+  <a href="index.html" class="back">← Back to Home</a>
+
 </div>
 
-<div class="card">
-  <h2>Apex Performance & Wellness – Windsor</h2>
-  <p>4510 Rhodes Dr #940</p>
-  <a class="cta"
-     href="https://apexperformancewellness.janeapp.com/#/staff_member/26/treatment/1"
-     target="_blank">
-     Book at Apex
-  </a>
-</div>
+<footer>
+© <span id="year"></span> Dr. Lawrence Lumba Chiropractic — Windsor & Tecumseh
+</footer>
 
-<div class="benefits">
-✔ No referral required<br>
-✔ Direct online scheduling<br>
-✔ Appointment confirmation sent instantly<br>
-✔ Evidence-informed care<br>
-✔ Serving Windsor & Tecumseh
-</div>
-
-<div class="trust">
-If you have questions before booking, feel free to contact us directly.
-</div>
-
-</div>
+<script>
+document.getElementById("year").textContent = new Date().getFullYear();
+</script>
 
 </body>
 </html>
