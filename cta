@@ -42,7 +42,7 @@
 
 <section class="hero">
 
-  <div class="container hero-grid">
+  <div class="container grid grid-2">
 
     <div>
 
@@ -57,11 +57,11 @@
       </p>
 
       <div class="hero-buttons">
-        <a href="book.html" class="cta primary">
+        <a href="book.html" class="btn btn-primary"
           Book Appointment
         </a>
 
-        <a href="team.html" class="cta secondary">
+        <a href="team.html" class="btn btn-secondary"
           Meet the Team
         </a>
       </div>
@@ -114,7 +114,7 @@
         </p>
       </div>
 
-      <div class="trust-card">
+      <div class="card">
         <h3>Modern Experience</h3>
         <p>
           Clean systems, efficient appointments,
@@ -141,13 +141,13 @@
       </p>
     </div>
 
-    <div class="locations">
+   <div class="grid grid-2">
 
       <!-- TECUMSEH -->
 
       <div class="card">
 
-        <div class="location-content">
+        <div class="card">
 
           <h3>Tecumseh</h3>
 
@@ -161,7 +161,7 @@
 
           <br>
 
-          <a href="chiropractor-tecumseh.html" class="cta primary">
+          <a href="chiropractor-tecumseh.html" class="btn btn-primary">
             Tecumseh Location
           </a>
 
@@ -173,7 +173,7 @@
 
       <div class="card">
 
-        <div class="location-content">
+        <div class="card">
 
           <h3>Windsor</h3>
 
@@ -186,7 +186,7 @@
 
           <br>
 
-          <a href="chiropractor-windsor.html" class="cta primary">
+          <a href="chiropractor-windsor.html" class="btn btn-primary">
             Windsor Location
           </a>
 
@@ -222,7 +222,7 @@
 
         <img src="8D252B37-9EA6-4A77-B9AA-A6987D901BE3.jpg" alt="Dr Lawrence Lumba Chiropractor Windsor Ontario">
 
-        <div class="team-content">
+        <div>
 
           <h3>Dr. Lawrence Lumba</h3>
 
@@ -249,7 +249,7 @@
 
         <img src="alex-chiro.jpg" alt="Dr Alex Lumba Chiropractor Windsor Ontario">
 
-        <div class="team-content">
+        <div>
 
           <h3>Dr. Alex Lumba</h3>
 
