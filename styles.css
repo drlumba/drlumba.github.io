@@ -11,17 +11,13 @@
   --muted:#9ca3af;
 
   --line:rgba(255,255,255,0.06);
-
   --accent:#5fa38f;
 
   --radius-lg:28px;
   --radius-md:20px;
 
   --shadow-soft:0 10px 30px rgba(0,0,0,0.22);
-
   --transition:0.25s ease;
-
-  --section-padding:90px;
 }
 
 /* =========================
@@ -90,7 +86,7 @@ nav{
   text-decoration:none;
   margin-left:24px;
   font-weight:600;
-  transition:0.2s;
+  transition:var(--transition);
 }
 
 .nav-links a:hover{
@@ -130,7 +126,9 @@ nav{
 ========================= */
 
 .cta{
-  display:inline-block;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
   padding:15px 28px;
   border-radius:999px;
   text-decoration:none;
@@ -154,7 +152,7 @@ nav{
 }
 
 /* =========================
-   SECTIONS
+   SECTION TITLES
 ========================= */
 
 .section-title{
@@ -172,7 +170,7 @@ nav{
 }
 
 /* =========================
-   CARDS (SHARED STYLE)
+   CARD SYSTEM (IMPORTANT FIX)
 ========================= */
 
 .card{
@@ -185,55 +183,44 @@ nav{
 
 .card:hover{
   transform:translateY(-5px);
+  box-shadow:var(--shadow-soft);
 }
 
 /* =========================
-   TRUST
+   GRID SYSTEMS
 ========================= */
 
-.trust-grid{
+.trust-grid,
+.locations,
+.team-grid{
   display:grid;
+  gap:30px;
+}
+
+.trust-grid{
   grid-template-columns:repeat(4,1fr);
   gap:24px;
 }
 
-.trust-card{
+.locations{
+  grid-template-columns:1fr 1fr;
+}
+
+.team-grid{
+  grid-template-columns:1fr 1fr;
+}
+
+/* =========================
+   CARD CONTENT
+========================= */
+
+.trust-card,
+.location-card,
+.team-card{
   padding:32px;
 }
 
-.trust-card h3{
-  margin-bottom:14px;
-  font-size:1.2rem;
-}
-
-.trust-card p{
-  color:var(--muted);
-}
-
-/* =========================
-   LOCATIONS
-========================= */
-
-.locations{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:30px;
-}
-
-.location-content{
-  padding:36px;
-}
-
-/* =========================
-   TEAM
-========================= */
-
-.team-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:36px;
-}
-
+/* TEAM IMAGE */
 .team-card img{
   width:100%;
   height:420px;
@@ -241,10 +228,6 @@ nav{
   object-position:center top;
   display:block;
   filter:saturate(0.96) contrast(1.02);
-}
-
-.team-content{
-  padding:36px;
 }
 
 /* =========================
@@ -290,10 +273,27 @@ footer{
 @media(max-width:900px){
 
   .hero-grid,
+  .trust-grid,
   .locations,
-  .team-grid,
-  .trust-grid{
+  .team-grid{
     grid-template-columns:1fr;
+  }
+
+  .hero{
+    padding-top:80px;
+  }
+
+  .nav-inner{
+    flex-direction:column;
+    gap:16px;
+  }
+
+  .nav-links a{
+    margin:0 10px;
+  }
+
+  .team-card img{
+    height:320px;
   }
 
 }
