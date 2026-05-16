@@ -213,11 +213,9 @@ nav{
 /* =========================
    CARD CONTENT
 ========================= */
-
-.trust-card,
-.location-card,
-.team-card{
+.card{
   padding:32px;
+
 }
 
 /* TEAM IMAGE */
