@@ -57,13 +57,13 @@
       </p>
 
       <div class="hero-buttons">
-        <a href="book.html" class="btn btn-primary"
-          Book Appointment
-        </a>
+        <a href="book.html" class="btn btn-primary">
+  Book Appointment
+</a>
 
-        <a href="team.html" class="btn btn-secondary"
-          Meet the Team
-        </a>
+        <a href="team.html" class="btn btn-secondary">
+  Meet the Team
+</a>
       </div>
 
     </div>
@@ -147,57 +147,46 @@
 
       <div class="card">
 
-        <div class="card">
+         <div class="card">
 
-          <h3>Tecumseh</h3>
+  <h3>Tecumseh</h3>
 
-          <p>
-            Beacon Physiotherapy<br>
-            1614 Lesperance Rd<br><br>
+  <p>
+    Beacon Physiotherapy<br>
+    1614 Lesperance Rd<br><br>
 
-            Chiropractic care focused on movement,
-            rehabilitation, and recovery.
-          </p>
+    Chiropractic care focused on movement,
+    rehabilitation, and recovery.
+  </p>
 
-          <br>
+  <br>
 
-          <a href="chiropractor-tecumseh.html" class="btn btn-primary">
-            Tecumseh Location
-          </a>
+  <a href="chiropractor-tecumseh.html" class="btn btn-primary">
+    Tecumseh Location
+  </a>
 
-        </div>
-
-      </div>
+</div>
 
       <!-- WINDSOR -->
 
-      <div class="card">
+     <div class="card">
 
-        <div class="card">
+  <h3>Windsor</h3>
 
-          <h3>Windsor</h3>
+  <p>
+    Apex Performance & Wellness<br>
+    4510 Rhodes Dr<br><br>
 
-          <p>
-            Apex Performance & Wellness<br>
-            4510 Rhodes Dr<br><br>
+    Modern chiropractic care in a professional performance-focused setting.
+  </p>
 
-            Modern chiropractic care in a professional performance-focused setting.
-          </p>
+  <br>
 
-          <br>
+  <a href="chiropractor-windsor.html" class="btn btn-primary">
+    Windsor Location
+  </a>
 
-          <a href="chiropractor-windsor.html" class="btn btn-primary">
-            Windsor Location
-          </a>
-
-        </div>
-
-      </div>
-
-    </div>
-
-  </div>
-
+</div>
 </section>
 
 <!-- TEAM -->
@@ -235,7 +224,7 @@
 
           <br>
 
-          <a href="book.html" class="cta primary">
+          <a href="book.html" class="btn btn-primary">
             Book with Lawrence
           </a>
 
@@ -265,7 +254,7 @@
           <a href="https://victoriachiropractic.janeapp.com/#/staff_member/10"
              target="_blank"
              rel="noopener noreferrer"
-             class="cta primary">
+             class="class="btn btn-primary">
              Book with Alex
           </a>
 
@@ -297,7 +286,7 @@
 
       <br><br>
 
-      <a href="book.html" class="cta primary">
+      <a href="book.html" "class="btn btn-primary">
         Book Appointment
       </a>
 
