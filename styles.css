@@ -13,7 +13,7 @@
 
   --accent:#5fa38f;
 
-  --radius:28px;
+  --radius:26px;
   --transition:0.25s ease;
 
   --container:1180px;
@@ -29,10 +29,6 @@
   box-sizing:border-box;
 }
 
-html{
-  scroll-behavior:smooth;
-}
-
 body{
   font-family:'Inter',sans-serif;
   background:var(--bg);
@@ -41,7 +37,7 @@ body{
 }
 
 /* =========================
-   LAYOUT SYSTEM
+   LAYOUT SYSTEM (ONLY ONE)
 ========================= */
 
 .container{
@@ -54,27 +50,25 @@ section{
   padding:90px 0;
 }
 
-/* GRID SYSTEM */
+/* GRID SYSTEM (ONLY LAYOUT TOOL) */
 
 .grid{
   display:grid;
   gap:24px;
 }
 
-.grid-2{
-  grid-template-columns:repeat(2,1fr);
-}
+.grid-2{ grid-template-columns:repeat(2,1fr); }
+.grid-3{ grid-template-columns:repeat(3,1fr); }
+.grid-4{ grid-template-columns:repeat(4,1fr); }
 
-.grid-3{
-  grid-template-columns:repeat(3,1fr);
-}
-
-.grid-4{
-  grid-template-columns:repeat(4,1fr);
+@media(max-width:900px){
+  .grid-2,.grid-3,.grid-4{
+    grid-template-columns:1fr;
+  }
 }
 
 /* =========================
-   NAVIGATION
+   NAV
 ========================= */
 
 nav{
@@ -119,18 +113,10 @@ nav{
   padding:120px 0 90px;
 }
 
-.hero-grid{
-  display:grid;
-  grid-template-columns:1.1fr 1fr;
-  gap:60px;
-  align-items:center;
-}
-
 .hero h1{
-  font-size:clamp(2.6rem,6vw,5rem);
+  font-size:clamp(2.5rem,6vw,5rem);
   line-height:1.05;
-  margin-bottom:24px;
-  letter-spacing:-1px;
+  margin-bottom:20px;
 }
 
 .hero p{
@@ -140,7 +126,7 @@ nav{
 }
 
 /* =========================
-   CARD SYSTEM (CORE COMPONENT)
+   CARD SYSTEM (ONLY COMPONENT)
 ========================= */
 
 .card{
@@ -161,8 +147,6 @@ nav{
 
 .btn{
   display:inline-flex;
-  align-items:center;
-  justify-content:center;
   padding:14px 26px;
   border-radius:999px;
   font-weight:700;
@@ -186,27 +170,9 @@ nav{
 }
 
 /* =========================
-   TYPOGRAPHY
+   IMAGES
 ========================= */
 
-h1,h2,h3{
-  letter-spacing:-0.02em;
-}
-
-h2{
-  font-size:2.3rem;
-  margin-bottom:12px;
-}
-
-p{
-  color:var(--muted);
-}
-
-/* =========================
-   TEAM IMAGES (ONLY EXCEPTIONAL RULE)
-========================= */
-
-.team-card img,
 .card img{
   width:100%;
   height:420px;
@@ -217,7 +183,7 @@ p{
 }
 
 /* =========================
-   CTA BLOCK (OPTIONAL SPECIAL CARD)
+   CTA BLOCK
 ========================= */
 
 .cta-block{
@@ -250,27 +216,4 @@ footer{
   text-align:center;
   color:var(--muted);
   font-size:0.85rem;
-}
-
-/* =========================
-   MOBILE
-========================= */
-
-@media(max-width:900px){
-
-  .hero-grid,
-  .grid-2,
-  .grid-3,
-  .grid-4{
-    grid-template-columns:1fr;
-  }
-
-  .nav-inner{
-    flex-direction:column;
-    gap:16px;
-  }
-
-  .nav-links a{
-    margin:0 10px;
-  }
 }
