@@ -7,9 +7,8 @@
   --space-md: 48px;
   --space-lg: 80px;
   --space-xl: 120px;
---space-scale-mobile: 0.85;
 }
-* {a
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -332,7 +331,7 @@ footer {
   }
 
  .hero {
-  padding: var(--space-lg) 0 var(--space-md);
+  padding: var(--space-md) 0 var(--space-md);
 }
 
   .hero-image img {
@@ -349,5 +348,9 @@ footer {
 
 .card {
   padding: 22px;
+}
+
+   .card {
+  gap: 12px;
 }
 }
