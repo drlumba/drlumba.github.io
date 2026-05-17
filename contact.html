@@ -1,0 +1,52 @@
+<section>
+
+  <div class="container">
+
+    <div class="section-title">
+      <h2>Send a Message</h2>
+      <p>We’ll respond within 1 business day.</p>
+    </div>
+
+    <form action="https://formspree.io/f/mjgzbrnr" method="POST" class="card">
+
+      <h3>Contact Form</h3>
+
+      <!-- Name -->
+      <input type="text" name="name" placeholder="Full Name" required>
+
+      <!-- Email (important for replies) -->
+      <input type="email" name="email" placeholder="Email Address" required>
+
+      <!-- Phone -->
+      <input type="tel" name="phone" placeholder="Phone Number (optional)">
+
+      <!-- Reason -->
+      <select name="reason" required>
+        <option value="">What can we help you with?</option>
+        <option value="back_pain">Back Pain</option>
+        <option value="neck_pain">Neck Pain</option>
+        <option value="sports_injury">Sports Injury</option>
+        <option value="rehab">Rehabilitation</option>
+        <option value="other">Other</option>
+      </select>
+
+      <!-- Message -->
+      <textarea name="message" placeholder="Briefly describe your concern..." required></textarea>
+
+      <!-- Optional subject line -->
+      <input type="hidden" name="_subject" value="New Patient Inquiry - Dr Lumba Chiropractic">
+
+      <!-- Submit -->
+      <button type="submit" class="btn btn-primary">
+        Send Message
+      </button>
+
+      <p style="margin-top:10px; font-size:0.85rem; opacity:0.7;">
+        Messages go directly to our clinic inbox.
+      </p>
+
+    </form>
+
+  </div>
+
+</section>
