@@ -1,26 +1,77 @@
-<section>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Contact | Dr. Lumba Chiropractic Windsor–Tecumseh</title>
+
+<meta name="description" content="Contact Dr. Lumba Chiropractic in Windsor–Tecumseh. Send a message or ask about appointments at Beacon, Apex, or Victoria clinics.">
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+
+</head>
+
+<body>
+
+<!-- NAV -->
+<nav>
+
+  <div class="container nav-inner">
+
+    <div class="logo">
+      DR. LUMBA CHIROPRACTIC
+    </div>
+
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="team.html">Clinicians</a>
+      <a href="locations.html">Locations</a>
+      <a href="book.html">Book</a>
+      <a href="contact.html">Contact</a>
+    </div>
+
+  </div>
+
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+
+  <div class="container">
+
+    <h1>Contact Us</h1>
+
+    <p>
+      Send a message and we’ll respond within 1 business day.
+      If needed, we’ll guide you to the right clinician or clinic.
+    </p>
+
+  </div>
+
+</section>
+
+<!-- FORM -->
+<section id="contact">
 
   <div class="container">
 
     <div class="section-title">
       <h2>Send a Message</h2>
-      <p>We’ll respond within 1 business day.</p>
+      <p>We’ll respond as soon as possible.</p>
     </div>
 
     <form action="https://formspree.io/f/mjgzbrnr" method="POST" class="card">
 
       <h3>Contact Form</h3>
 
-      <!-- Name -->
       <input type="text" name="name" placeholder="Full Name" required>
 
-      <!-- Email (important for replies) -->
       <input type="email" name="email" placeholder="Email Address" required>
 
-      <!-- Phone -->
       <input type="tel" name="phone" placeholder="Phone Number (optional)">
 
-      <!-- Reason -->
       <select name="reason" required>
         <option value="">What can we help you with?</option>
         <option value="back_pain">Back Pain</option>
@@ -30,13 +81,10 @@
         <option value="other">Other</option>
       </select>
 
-      <!-- Message -->
       <textarea name="message" placeholder="Briefly describe your concern..." required></textarea>
 
-      <!-- Optional subject line -->
-      <input type="hidden" name="_subject" value="New Patient Inquiry - Dr Lumba Chiropractic">
+      <input type="hidden" name="_subject" value="New Contact Form Submission - Dr Lumba Chiropractic">
 
-      <!-- Submit -->
       <button type="submit" class="btn btn-primary">
         Send Message
       </button>
@@ -50,3 +98,40 @@
   </div>
 
 </section>
+
+<!-- CTA -->
+<section>
+
+  <div class="container">
+
+    <div class="cta-block">
+
+      <h2>Prefer to Book Directly?</h2>
+
+      <p>
+        You can also book an appointment instead of sending a message.
+      </p>
+
+      <br><br>
+
+      <a href="book.html" class="btn btn-primary">
+        Book Appointment
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- FOOTER -->
+<footer>
+© <span id="year"></span> Dr. Lawrence Lumba Chiropractic — Windsor–Tecumseh, Ontario
+</footer>
+
+<script>
+document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
