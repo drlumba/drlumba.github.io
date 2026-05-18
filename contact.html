@@ -1,58 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Contact | Dr. Lumba Chiropractic Windsor–Tecumseh</title>
+<title>Contact Dr. Lumba Chiropractic | Windsor & Tecumseh</title>
 
-<meta name="description" content="Contact Dr. Lumba Chiropractic in Windsor–Tecumseh. Send a message or ask about appointments at Beacon, Apex, or Victoria clinics.">
+<meta name="description" content="Contact Dr. Lumba Chiropractic in Windsor and Tecumseh. Send a message or connect with Dr. Lawrence Lumba and Dr. Alex Lumba.">
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
 <link rel="stylesheet" href="styles.css">
+
 </head>
 
 <body>
 
-<!-- NAV -->
+<div class="bg-accent"></div>
+
 <nav>
+
   <div class="container nav-inner">
 
     <div class="logo">
-      DR. LUMBA CHIROPRACTIC
+      DR. LUMBA
+      <span>HEALTH & MOVEMENT</span>
     </div>
 
     <div class="nav-links">
-  <a href="index.html">Home</a>
-  <a href="lawrence.html">Lawrence</a>
-  <a href="alex.html">Alex</a>
-  <a href="contact.html">Contact</a>
-</div>
+      <a href="index.html">Home</a>
+      <a href="lawrence.html">Lawrence</a>
+      <a href="alex.html">Alex</a>
+      <a href="contact.html">Contact</a>
+    </div>
 
   </div>
+
 </nav>
 
-<!-- HERO -->
 <section class="hero">
+
   <div class="container">
 
-    <h1>Contact Us</h1>
+    <div class="hero-label">
+      CONTACT
+    </div>
+
+    <h1>
+      Get in Touch.
+    </h1>
 
     <p>
-      Send a message and we’ll respond within 1 business day.
-      If needed, we’ll guide you to the right clinician or clinic.
+      Send a message and we’ll help guide you to the right provider, clinic location, or booking option.
     </p>
 
   </div>
+
 </section>
 
-<!-- FORM -->
 <section>
+
   <div class="container">
 
     <div class="section-title">
-      <h2>Send a Message</h2>
-      <p>We typically respond within 1 business day.</p>
+
+      <h2>
+        Send a Message
+      </h2>
+
+      <p>
+        We typically respond within 1 business day.
+      </p>
+
     </div>
 
     <form action="https://formspree.io/f/mjgzbrnr" method="POST" class="card">
@@ -65,8 +85,16 @@
 
       <input type="tel" name="phone" placeholder="Phone Number (optional)">
 
+      <select name="provider">
+        <option value="">Preferred provider</option>
+        <option value="lawrence">Dr. Lawrence Lumba</option>
+        <option value="alex">Dr. Alex Lumba</option>
+        <option value="unsure">Not sure</option>
+      </select>
+
       <select name="reason" required>
         <option value="">What can we help you with?</option>
+        <option value="booking">Booking question</option>
         <option value="back_pain">Back Pain</option>
         <option value="neck_pain">Neck Pain</option>
         <option value="sports_injury">Sports Injury</option>
@@ -85,34 +113,63 @@
     </form>
 
   </div>
+
 </section>
 
-<!-- CTA -->
 <section>
+
   <div class="container">
 
-    <div class="cta-block">
+    <div class="section-title">
 
-      <h2>Prefer to Book Instead?</h2>
+      <h2>
+        Book Directly
+      </h2>
 
       <p>
-        You can book directly instead of sending a message.
+        Choose a provider and book online through Jane.
       </p>
 
-      <br><br>
+    </div>
 
-      <a href="book.html" class="btn btn-primary">
-        Book Appointment
-      </a>
+    <div class="grid grid-2">
+
+      <div class="card">
+
+        <h3>Dr. Lawrence Lumba</h3>
+
+        <p>
+          Evidence-informed chiropractic care focused on movement quality, recovery, rehabilitation, and long-term resilience.
+        </p>
+
+        <a href="lawrence.html" class="btn btn-primary">
+          Book with Lawrence
+        </a>
+
+      </div>
+
+      <div class="card">
+
+        <h3>Dr. Alex Lumba</h3>
+
+        <p>
+          Patient-centered chiropractic care focused on mobility, recovery, and evidence-informed treatment.
+        </p>
+
+        <a href="alex.html" class="btn btn-primary">
+          Book with Alex
+        </a>
+
+      </div>
 
     </div>
 
   </div>
+
 </section>
 
-<!-- FOOTER -->
 <footer>
-© <span id="year"></span> Dr. Lawrence Lumba Chiropractic — Windsor–Tecumseh, Ontario
+  © <span id="year"></span> Dr. Lumba Chiropractic | Windsor & Tecumseh
 </footer>
 
 <script>
