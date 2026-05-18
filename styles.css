@@ -127,7 +127,15 @@ nav {
 
 .hero {
   padding: var(--space-xl) 0 var(--space-lg);
-  background: var(--bg);
+
+  background:
+    radial-gradient(
+      circle at top right,
+      rgba(24,196,207,0.06),
+      transparent 35%
+    );
+
+  overflow: hidden;
 }
 
 .hero h1 {
@@ -401,4 +409,39 @@ footer {
   .cta-block {
     padding: var(--space-md) var(--space-sm);
   }
+}
+/* =========================
+   PREMIUM HERO LOGO
+========================= */
+
+.logo-hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-hero img {
+  width: 100%;
+  max-width: 420px;
+
+  height: auto;
+  min-height: unset;
+
+  object-fit: contain;
+
+  border-radius: 36px;
+
+  transition:
+    transform 0.35s ease,
+    filter 0.35s ease;
+
+  filter:
+    drop-shadow(0 20px 40px rgba(0,0,0,0.08));
+}
+
+.logo-hero img:hover {
+  transform: translateY(-4px) scale(1.01);
+
+  filter:
+    drop-shadow(0 28px 60px rgba(0,0,0,0.12));
 }
