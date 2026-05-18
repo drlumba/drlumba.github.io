@@ -528,37 +528,6 @@ textarea {
 }
 
 /* =========================
-   QUOTE SECTION
-========================= */
-
-.quote-section {
-  padding-top: 0;
-}
-
-.quote-card {
-  background: white;
-  border: 1px solid var(--border);
-
-  border-radius: 32px;
-
-  padding: 48px;
-
-  text-align: center;
-
-  box-shadow:
-    0 10px 30px rgba(0,0,0,0.04);
-}
-
-.quote-card p {
-  font-size: 1.4rem;
-  line-height: 1.5;
-  letter-spacing: -0.02em;
-  max-width: 800px;
-  margin: 0 auto;
-  color: var(--text);
-}
-
-/* =========================
    INTEGRATED HOMEPAGE LOGO
 ========================= */
 
