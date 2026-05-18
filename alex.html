@@ -1,209 +1,314 @@
-/* =========================
-   LUXURY / PREMIUM FINISH
-========================= */
+<!-- =========================
+     ALEX.HTML
+========================= -->
 
-/* softer overall rendering */
+<!DOCTYPE html>
+<html lang="en">
+<head>
 
-body {
-  -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
-}
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-/* subtle background texture */
+<title>Dr. Alex Lumba Chiropractor Windsor | Book Appointment</title>
 
-body::before {
-  content: "";
+<meta name="description" content="Book chiropractic care with Dr. Alex Lumba in Windsor and Tecumseh. Evidence-informed chiropractic care focused on movement, recovery, and patient-centered treatment.">
 
-  position: fixed;
-  inset: 0;
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-  background-image:
-    radial-gradient(rgba(0,0,0,0.015) 1px, transparent 1px);
+<link rel="stylesheet" href="styles.css">
 
-  background-size: 24px 24px;
+</head>
 
-  opacity: 0.35;
+<body>
 
-  pointer-events: none;
+<div class="bg-accent"></div>
 
-  z-index: -2;
-}
+<nav>
 
-/* more premium hero lighting */
+  <div class="container nav-inner">
 
-.hero::before {
-  content: "";
+    <div class="logo">
+      DR. LUMBA
+      <span>HEALTH & MOVEMENT</span>
+    </div>
 
-  position: absolute;
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="lawrence.html">Lawrence</a>
+      <a href="alex.html">Alex</a>
+      <a href="contact.html">Contact</a>
+    </div>
 
-  top: -200px;
-  right: -150px;
+  </div>
 
-  width: 600px;
-  height: 600px;
+</nav>
 
-  background:
-    radial-gradient(
-      circle,
-      rgba(24,196,207,0.12) 0%,
-      rgba(24,196,207,0.03) 35%,
-      transparent 70%
-    );
+<section class="hero">
 
-  pointer-events: none;
-}
+  <div class="container grid grid-2">
 
-/* richer typography */
+    <div>
 
-h1,
-h2,
-h3 {
-  text-wrap: balance;
-}
+      <div class="hero-label">
+        WINDSOR CHIROPRACTOR
+      </div>
 
-/* logo refinement */
+      <h1>
+        Dr. Alex Lumba
+      </h1>
 
-.logo {
-  display: flex;
-  flex-direction: column;
-  line-height: 1;
-}
+      <p>
+        Patient-centered chiropractic care focused on helping people recover, move better, and feel confident in their bodies.
+      </p>
 
-.logo span {
-  font-size: 0.65rem;
-  font-weight: 700;
-  letter-spacing: 0.18em;
-  margin-top: 7px;
-  color: var(--primary);
-}
+      <div class="hero-buttons">
 
-/* better card depth */
+        <a href="https://victoriachiropractic.janeapp.com/#/staff_member/10/treatment/44"
+           target="_blank"
+           rel="noopener noreferrer"
+           class="btn btn-primary">
 
-.card {
-  backdrop-filter: blur(10px);
+          Book with Alex
 
-  box-shadow:
-    0 2px 6px rgba(0,0,0,0.02),
-    0 12px 32px rgba(0,0,0,0.05);
+        </a>
 
-  transition:
-    transform 0.35s ease,
-    box-shadow 0.35s ease,
-    border-color 0.35s ease;
-}
+        <a href="contact.html" class="btn btn-secondary">
+          Contact
+        </a>
 
-.card:hover {
+      </div>
 
-  transform:
-    translateY(-6px);
+      <div class="hero-trust">
+        Available at Victoria Chiropractic & Rehabilitation and Beacon Physiotherapy.
+      </div>
 
-  border-color:
-    rgba(24,196,207,0.18);
+    </div>
 
-  box-shadow:
-    0 10px 30px rgba(0,0,0,0.06),
-    0 24px 60px rgba(0,0,0,0.10);
-}
+    <div class="hero-image">
 
-/* premium image rendering */
+      <img
+        class="alex-img"
+        src="alex-chiro.jpg"
+        alt="Dr Alex Lumba Chiropractor Windsor Ontario">
 
-.card img,
-.hero-image img {
+    </div>
 
-  image-rendering: auto;
+  </div>
 
-  transform: translateZ(0);
+</section>
 
-  box-shadow:
-    0 12px 40px rgba(0,0,0,0.08);
+<section>
 
-  transition:
-    transform 0.45s ease,
-    box-shadow 0.45s ease;
-}
+  <div class="container">
 
-.card img:hover,
-.hero-image img:hover {
+    <div class="section-title">
 
-  transform:
-    translateY(-4px)
-    scale(1.015);
+      <h2>
+        Care Approach
+      </h2>
 
-  box-shadow:
-    0 24px 60px rgba(0,0,0,0.14);
-}
+      <p>
+        Modern chiropractic care focused on movement, comfort, and recovery.
+      </p>
 
-/* buttons feel more premium */
+    </div>
 
-.btn {
-  letter-spacing: -0.01em;
-}
+    <div class="grid grid-3">
 
-.btn-primary {
+      <div class="card">
 
-  background:
-    linear-gradient(
-      135deg,
-      #1dcad5,
-      #0ea7b1
-    );
+        <h3>Evidence-Informed</h3>
 
-  box-shadow:
-    0 8px 20px rgba(24,196,207,0.22);
-}
+        <p>
+          Care guided by clinical reasoning, patient goals, and practical treatment planning.
+        </p>
 
-.btn-primary:hover {
+      </div>
 
-  box-shadow:
-    0 16px 36px rgba(24,196,207,0.28);
-}
+      <div class="card">
 
-/* cleaner nav */
+        <h3>Movement-Focused</h3>
 
-nav {
+        <p>
+          Treatment designed to help improve mobility, function, and confidence with movement.
+        </p>
 
-  background:
-    rgba(255,255,255,0.78);
+      </div>
 
-  backdrop-filter:
-    blur(18px);
+      <div class="card">
 
-  -webkit-backdrop-filter:
-    blur(18px);
-}
+        <h3>Patient-Centered</h3>
 
-/* subtle section fade */
+        <p>
+          A calm, supportive appointment experience built around your needs and comfort.
+        </p>
 
-section {
-  position: relative;
-}
+      </div>
 
-/* elegant divider line */
+    </div>
 
-.section-title h2::after {
+  </div>
 
-  width: 72px;
-  height: 5px;
+</section>
 
-  background:
-    linear-gradient(
-      90deg,
-      #18c4cf,
-      #0ea7b1
-    );
+<section>
 
-  box-shadow:
-    0 4px 12px rgba(24,196,207,0.22);
-}
+  <div class="container">
 
-/* premium footer */
+    <div class="section-title">
 
-footer {
+      <h2>
+        Conditions Treated
+      </h2>
 
-  background:
-    linear-gradient(
-      to bottom,
-      rgba(255,255,255,1),
-      rgba(247,249,250,1)
-    );
-}
+      <p>
+        Chiropractic care for common muscle, joint, and movement-related concerns.
+      </p>
+
+    </div>
+
+    <div class="grid grid-2">
+
+      <div class="card">
+        <h3>Back & Neck Pain</h3>
+      </div>
+
+      <div class="card">
+        <h3>Headaches</h3>
+      </div>
+
+      <div class="card">
+        <h3>Mobility Issues</h3>
+      </div>
+
+      <div class="card">
+        <h3>Injury Recovery</h3>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section>
+
+  <div class="container">
+
+    <div class="section-title">
+
+      <h2>
+        Clinic Locations
+      </h2>
+
+      <p>
+        Book chiropractic care at either Windsor or Tecumseh clinic locations.
+      </p>
+
+    </div>
+
+    <div class="grid grid-2">
+
+      <div class="card">
+
+        <h3>Victoria Chiropractic & Rehabilitation</h3>
+
+        <div class="provider-tag">
+          Windsor
+        </div>
+
+        <p>
+          248 Erie St W<br>
+          Windsor, Ontario
+        </p>
+
+        <p>
+          Rehabilitation-focused chiropractic care and movement recovery.
+        </p>
+
+        <a href="https://victoriachiropractic.janeapp.com/#/staff_member/10/treatment/44"
+           target="_blank"
+           rel="noopener noreferrer"
+           class="btn btn-primary">
+
+          Book at Victoria
+
+        </a>
+
+      </div>
+
+      <div class="card">
+
+        <h3>Beacon Physiotherapy</h3>
+
+        <div class="provider-tag">
+          Tecumseh
+        </div>
+
+        <p>
+          1614 Lesperance Rd, Building D3<br>
+          Tecumseh, Ontario
+        </p>
+
+        <p>
+          Collaborative chiropractic care within a modern rehab setting.
+        </p>
+
+        <a href="https://beaconphysio.janeapp.com/#/chiropractic"
+           target="_blank"
+           rel="noopener noreferrer"
+           class="btn btn-primary">
+
+          Book at Beacon
+
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section>
+
+  <div class="container">
+
+    <div class="cta-block">
+
+      <h2>
+        Ready to Book with Dr. Alex?
+      </h2>
+
+      <p>
+        Schedule online through Jane and choose the clinic location that works best for you.
+      </p>
+
+      <br><br>
+
+      <a href="https://victoriachiropractic.janeapp.com/#/staff_member/10/treatment/44"
+         target="_blank"
+         rel="noopener noreferrer"
+         class="btn btn-primary">
+
+        Book with Alex
+
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+<footer>
+  © <span id="year"></span> Dr. Alex Lumba Chiropractic | Windsor & Tecumseh
+</footer>
+
+<script>
+document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
