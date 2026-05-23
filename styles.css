@@ -649,3 +649,23 @@ footer {
     padding: 24px;
   }
 }
+.hero-dark {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-dark::after {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background:
+    radial-gradient(
+      circle at center,
+      rgba(159,245,229,0.08),
+      transparent 40%
+    );
+
+  pointer-events: none;
+}
