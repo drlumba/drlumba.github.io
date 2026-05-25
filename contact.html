@@ -7,17 +7,15 @@
 
 <title>Contact Dr. Lumba Chiropractic | Windsor & Tecumseh</title>
 
-<meta name="description" content="Contact Dr. Lumba Chiropractic in Windsor and Tecumseh. Send a message or connect with Dr. Lawrence Lumba and Dr. Alex Lumba.">
+<meta name="description" content="Contact Dr. Lumba Chiropractic in Windsor and Tecumseh. Send a message or book directly with Dr. Lawrence Lumba or Dr. Alex Lumba.">
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" href="styles.css">
 
 </head>
 
 <body>
-
-<div class="bg-accent"></div>
 
 <nav>
 
@@ -39,7 +37,7 @@
 
 </nav>
 
-<section class="hero">
+<section class="hero hero-compact">
 
   <div class="container">
 
@@ -52,7 +50,7 @@
     </h1>
 
     <p>
-      Send a message and we’ll help guide you to the right provider, clinic location, or booking option.
+      Have a question about care, location, or booking? Send a message and we’ll help guide you to the right option.
     </p>
 
   </div>
@@ -63,54 +61,90 @@
 
   <div class="container">
 
-    <div class="section-title">
+    <div class="grid grid-2 contact-layout">
 
-      <h2>
-        Send a Message
-      </h2>
+      <div>
 
-      <p>
-        We typically respond within 1 business day.
-      </p>
+        <div class="section-title left">
+
+          <h2>
+            Send a Message
+          </h2>
+
+          <p>
+            For booking questions, provider selection, clinic location details, or general inquiries.
+          </p>
+
+        </div>
+
+        <div class="card contact-note">
+
+          <h3>Prefer to book directly?</h3>
+
+          <p>
+            You can also choose a provider below and book online through Jane.
+          </p>
+
+        </div>
+
+      </div>
+
+      <form action="https://formspree.io/f/mjgzbrnr" method="POST" class="card contact-form">
+
+        <h3>Contact Form</h3>
+
+        <label>
+          Full Name
+          <input type="text" name="name" placeholder="Your full name" required>
+        </label>
+
+        <label>
+          Email Address
+          <input type="email" name="email" placeholder="you@example.com" required>
+        </label>
+
+        <label>
+          Phone Number
+          <input type="tel" name="phone" placeholder="Optional">
+        </label>
+
+        <label>
+          Preferred Provider
+          <select name="provider">
+            <option value="">Select one</option>
+            <option value="lawrence">Dr. Lawrence Lumba</option>
+            <option value="alex">Dr. Alex Lumba</option>
+            <option value="unsure">Not sure</option>
+          </select>
+        </label>
+
+        <label>
+          Reason for Message
+          <select name="reason" required>
+            <option value="">Select one</option>
+            <option value="booking">Booking question</option>
+            <option value="back_pain">Back pain</option>
+            <option value="neck_pain">Neck pain</option>
+            <option value="sports_injury">Sports injury</option>
+            <option value="rehab">Rehabilitation</option>
+            <option value="other">Other</option>
+          </select>
+        </label>
+
+        <label>
+          Message
+          <textarea name="message" placeholder="Briefly describe what you need help with..." required></textarea>
+        </label>
+
+        <input type="hidden" name="_subject" value="New Contact Form - Dr Lumba Chiropractic">
+
+        <button type="submit" class="btn btn-primary">
+          Send Message
+        </button>
+
+      </form>
 
     </div>
-
-    <form action="https://formspree.io/f/mjgzbrnr" method="POST" class="card">
-
-      <h3>Contact Form</h3>
-
-      <input type="text" name="name" placeholder="Full Name" required>
-
-      <input type="email" name="email" placeholder="Email Address" required>
-
-      <input type="tel" name="phone" placeholder="Phone Number (optional)">
-
-      <select name="provider">
-        <option value="">Preferred provider</option>
-        <option value="lawrence">Dr. Lawrence Lumba</option>
-        <option value="alex">Dr. Alex Lumba</option>
-        <option value="unsure">Not sure</option>
-      </select>
-
-      <select name="reason" required>
-        <option value="">What can we help you with?</option>
-        <option value="booking">Booking question</option>
-        <option value="back_pain">Back Pain</option>
-        <option value="neck_pain">Neck Pain</option>
-        <option value="sports_injury">Sports Injury</option>
-        <option value="rehab">Rehabilitation</option>
-        <option value="other">Other</option>
-      </select>
-
-      <textarea name="message" placeholder="Briefly describe your concern..." required></textarea>
-
-      <input type="hidden" name="_subject" value="New Contact Form - Dr Lumba Chiropractic">
-
-      <button type="submit" class="btn btn-primary">
-        Send Message
-      </button>
-
-    </form>
 
   </div>
 
@@ -127,14 +161,16 @@
       </h2>
 
       <p>
-        Choose a provider and book online through Jane.
+        Choose a provider to view booking options and clinic locations.
       </p>
 
     </div>
 
     <div class="grid grid-2">
 
-      <div class="card">
+      <div class="card provider-card">
+
+        <span class="hero-label">CHIROPRACTOR</span>
 
         <h3>Dr. Lawrence Lumba</h3>
 
@@ -148,7 +184,9 @@
 
       </div>
 
-      <div class="card">
+      <div class="card provider-card">
+
+        <span class="hero-label">CHIROPRACTOR</span>
 
         <h3>Dr. Alex Lumba</h3>
 
