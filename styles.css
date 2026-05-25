@@ -118,6 +118,36 @@ section:nth-child(even) {
 }
 
 /* =========================
+   GLOBAL IMAGE FIX
+========================= */
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.card img,
+.provider-photo img,
+.provider-image img,
+.profile-image img,
+.team-card img {
+  width: 100%;
+  max-height: 380px;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: 26px;
+
+  box-shadow:
+    0 24px 46px rgba(0,0,0,0.14);
+
+  filter:
+    saturate(1.03)
+    contrast(1.03);
+}
+
+/* =========================
    NAV
 ========================= */
 
@@ -164,8 +194,9 @@ nav {
 }
 
 .logo img {
-  width: 56px;
-  height: auto;
+  width: 52px;
+  max-height: 52px;
+  object-fit: contain;
 
   filter:
     drop-shadow(0 0 14px rgba(0,74,82,0.24))
@@ -227,11 +258,11 @@ nav {
 ========================= */
 
 .hero {
-  min-height: 88vh;
+  min-height: auto;
 
   padding:
-    var(--space-xl) 0
-    var(--space-lg);
+    110px 0
+    80px;
 
   background:
     radial-gradient(
@@ -286,7 +317,7 @@ nav {
 }
 
 .hero h1 {
-  font-size: clamp(3.5rem, 6vw, 6rem);
+  font-size: clamp(3.2rem, 5vw, 5.4rem);
 
   line-height: 0.98;
 
@@ -319,7 +350,7 @@ nav {
 }
 
 /* =========================
-   LOGO HERO / PROVIDER IMAGES
+   HERO / PROVIDER IMAGE SYSTEM
 ========================= */
 
 .logo-hero {
@@ -329,7 +360,7 @@ nav {
 
   position: relative;
 
-  min-height: 420px;
+  min-height: 360px;
 }
 
 .logo-hero::before {
@@ -337,8 +368,8 @@ nav {
 
   position: absolute;
 
-  width: 520px;
-  height: 520px;
+  width: 420px;
+  height: 420px;
 
   border-radius: 50%;
 
@@ -358,10 +389,10 @@ nav {
   z-index: 1;
 
   width: 100%;
-  max-width: 300px;
-  max-height: 420px;
+  max-width: 280px;
+  max-height: 360px;
 
-  height: auto;
+  aspect-ratio: 4 / 5;
 
   object-fit: cover;
   object-position: center top;
@@ -387,7 +418,6 @@ nav {
 }
 
 .logo-hero img:hover {
-
   transform:
     translateY(-4px)
     scale(1.01);
@@ -403,20 +433,21 @@ nav {
     inset 0 1px 0 rgba(255,255,255,0.85);
 }
 
-/* =========================
-   PROVIDER PAGE LAYOUT FIX
-========================= */
-
+/* Provider pages: better balance between text and photo */
 .hero .grid-2 {
-  grid-template-columns: 1.15fr 0.85fr;
-  gap: 64px;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 56px;
   align-items: center;
 }
 
-.hero .card img {
-  max-height: 440px;
-  object-fit: cover;
-  object-position: center top;
+/* Homepage logo exception */
+.home-logo,
+.logo-main,
+.brand-mark {
+  max-width: 340px;
+  max-height: none;
+  aspect-ratio: auto;
+  object-fit: contain;
 }
 
 /* =========================
@@ -472,6 +503,87 @@ nav {
     0 28px 58px rgba(0,74,82,0.32);
 }
 
+.btn-secondary {
+  background:
+    rgba(255,255,255,0.48);
+
+  color: var(--primary-dark);
+
+  border:
+    1px solid rgba(0,74,82,0.16);
+
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.72),
+    0 12px 28px rgba(0,0,0,0.07);
+}
+
+.btn-secondary:hover {
+  transform: translateY(-2px);
+
+  background:
+    rgba(255,255,255,0.7);
+
+  border-color:
+    rgba(0,74,82,0.24);
+}
+
+/* =========================
+   SECTION TITLE
+========================= */
+
+.section-title {
+  text-align: center;
+  margin-bottom: var(--space-md);
+}
+
+.section-title.left {
+  text-align: left;
+}
+
+.section-title h2 {
+  font-size: 2.8rem;
+  margin-bottom: 14px;
+
+  letter-spacing: -0.035em;
+
+  color: var(--primary-dark);
+
+  text-shadow:
+    0 1px 0 rgba(255,255,255,0.95);
+}
+
+.section-title h2::after {
+  content: "";
+
+  display: block;
+
+  width: 86px;
+  height: 5px;
+
+  margin: 20px auto 0;
+
+  border-radius: 999px;
+
+  background:
+    linear-gradient(
+      90deg,
+      var(--primary-dark),
+      var(--primary-gloss),
+      var(--accent-glow)
+    );
+
+  box-shadow:
+    0 0 22px rgba(0,109,115,0.20);
+}
+
+.section-title.left h2::after {
+  margin-left: 0;
+}
+
+.section-title p {
+  color: var(--text-light);
+}
+
 /* =========================
    PREMIUM CARD SYSTEM
 ========================= */
@@ -492,6 +604,7 @@ nav {
   padding: 36px;
 
   backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
 
   box-shadow:
     0 24px 60px rgba(0,0,0,0.10),
@@ -499,6 +612,11 @@ nav {
 
   position: relative;
   overflow: hidden;
+
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease,
+    border-color 0.35s ease;
 }
 
 .card::before {
@@ -538,16 +656,64 @@ nav {
 }
 
 /* =========================
+   CTA BLOCK
+========================= */
+
+.cta-block {
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255,255,255,0.86),
+      rgba(246,246,241,0.64)
+    );
+
+  border:
+    1px solid rgba(0,74,82,0.12);
+
+  border-radius: 38px;
+
+  padding:
+    var(--space-lg)
+    var(--space-md);
+
+  text-align: center;
+
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+
+  box-shadow:
+    0 28px 70px rgba(0,0,0,0.11),
+    inset 0 1px 0 rgba(255,255,255,0.9);
+
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-block h2 {
+  color: var(--primary-dark);
+}
+
+.cta-block p {
+  color: var(--text-light);
+  max-width: 700px;
+  margin: 20px auto 0;
+}
+
+/* =========================
    CONTACT PAGE
 ========================= */
 
 .hero-compact {
   min-height: auto;
-  padding: 110px 0 70px;
+  padding: 100px 0 60px;
 }
 
 .contact-layout {
   align-items: start;
+}
+
+.contact-note {
+  margin-top: 32px;
 }
 
 .contact-form {
@@ -601,6 +767,23 @@ nav {
   resize: vertical;
 }
 
+.contact-form button {
+  margin-top: 8px;
+  width: fit-content;
+}
+
+.provider-card {
+  min-height: 300px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.provider-card .btn {
+  margin-top: auto;
+}
+
 /* =========================
    FOOTER
 ========================= */
@@ -649,34 +832,11 @@ footer {
   }
 
   .hero {
-    min-height: auto;
-    padding: var(--space-lg) 0;
+    padding: 76px 0 52px;
   }
 
   .hero h1 {
-    font-size: 3.35rem;
-  }
-
-  .logo-hero {
-    min-height: auto;
-    margin-top: 24px;
-  }
-
-  .logo-hero::before {
-    width: 360px;
-    height: 360px;
-  }
-
-  .logo-hero img {
-
-    max-width: 230px;
-    max-height: 300px;
-
-    border-radius: 26px;
-
-    margin: 0 auto;
-
-    display: block;
+    font-size: 3.05rem;
   }
 
   .hero .grid-2 {
@@ -684,7 +844,28 @@ footer {
     gap: 34px;
   }
 
-  .hero .card img {
+  .logo-hero {
+    min-height: auto;
+    margin-top: 18px;
+  }
+
+  .logo-hero::before {
+    width: 320px;
+    height: 320px;
+  }
+
+  .logo-hero img {
+    max-width: 220px;
+    max-height: 300px;
+    border-radius: 26px;
+    margin: 0 auto;
+  }
+
+  .card img,
+  .provider-photo img,
+  .provider-image img,
+  .profile-image img,
+  .team-card img {
     max-height: 320px;
   }
 
@@ -695,6 +876,14 @@ footer {
   .card {
     padding: 26px;
     border-radius: 28px;
+  }
+
+  .section-title.left {
+    text-align: center;
+  }
+
+  .section-title.left h2::after {
+    margin-left: auto;
   }
 
   .contact-form button {
