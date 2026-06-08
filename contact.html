@@ -1,47 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<!-- Google Analytics -->
-
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZLXW1TF3WF"></script>
-
-<script>
-  window.dataLayer = window.dataLayer || [];
-
-  function gtag(){
-    dataLayer.push(arguments);
-  }
-
-  gtag('js', new Date());
-
-  gtag('config', 'G-ZLXW1TF3WF');
-</script>
-
 <head>
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZLXW1TF3WF"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-ZLXW1TF3WF');
+  </script>
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Contact Dr. Lumba Chiropractic | Windsor & Tecumseh</title>
+  <title>Contact Dr. Lumba | Chiropractic Care Windsor & Tecumseh</title>
 
-<meta name="description" content="Contact Dr. Lumba Chiropractic in Windsor and Tecumseh. Send a message or book directly with Dr. Lawrence Lumba or Dr. Alex Lumba.">
+  <meta name="description" content="Contact Dr. Lumba Health & Movement in Windsor and Tecumseh. Send a message, email Dr. Lawrence Lumba or Dr. Alex Lumba, or book chiropractic care online.">
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
-<link rel="stylesheet" href="styles.css">
-
+  <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
 
 <nav>
-
   <div class="container nav-inner">
 
-    <div class="logo">
-      DR. LUMBA
-      <span>HEALTH & MOVEMENT</span>
-    </div>
+    <a href="index.html" class="logo" aria-label="Dr. Lumba Health and Movement Home">
+      <img src="logo-updated.png" alt="Dr. Lumba Health and Movement Logo">
+      <div>
+        DR. LUMBA
+        <span>HEALTH & MOVEMENT</span>
+      </div>
+    </a>
 
     <div class="nav-links">
       <a href="index.html">Home</a>
@@ -51,7 +46,6 @@
     </div>
 
   </div>
-
 </nav>
 
 <section class="hero hero-compact">
@@ -59,7 +53,7 @@
   <div class="container">
 
     <div class="hero-label">
-      CONTACT
+      Contact
     </div>
 
     <h1>
@@ -67,7 +61,7 @@
     </h1>
 
     <p>
-      Have a question about care, location, or booking? Send a message and we’ll help guide you to the right option.
+      Have a question about care, clinic location, or booking? Send a message, email a provider directly, or choose a booking option below.
     </p>
 
   </div>
@@ -84,9 +78,7 @@
 
         <div class="section-title left">
 
-          <h2>
-            Send a Message
-          </h2>
+          <h2>Send a Message</h2>
 
           <p>
             For booking questions, provider selection, clinic location details, or general inquiries.
@@ -96,10 +88,20 @@
 
         <div class="card contact-note">
 
-          <h3>Prefer to book directly?</h3>
+          <h3>Prefer email?</h3>
 
           <p>
-            You can also choose a provider below and book online through Jane.
+            You can contact each provider directly using the email links below.
+          </p>
+
+          <p>
+            <strong>Lawrence:</strong><br>
+            <a href="mailto:lawrence@drlumba.ca">lawrence@drlumba.ca</a>
+          </p>
+
+          <p>
+            <strong>Alex:</strong><br>
+            <a href="mailto:alex@drlumba.ca">alex@drlumba.ca</a>
           </p>
 
         </div>
@@ -140,9 +142,12 @@
           <select name="reason" required>
             <option value="">Select one</option>
             <option value="booking">Booking question</option>
+            <option value="provider_selection">Provider selection</option>
+            <option value="clinic_location">Clinic location</option>
             <option value="back_pain">Back pain</option>
             <option value="neck_pain">Neck pain</option>
             <option value="sports_injury">Sports injury</option>
+            <option value="mobility">Mobility or osteoarthritis</option>
             <option value="rehab">Rehabilitation</option>
             <option value="other">Other</option>
           </select>
@@ -153,7 +158,7 @@
           <textarea name="message" placeholder="Briefly describe what you need help with..." required></textarea>
         </label>
 
-        <input type="hidden" name="_subject" value="New Contact Form - Dr Lumba Chiropractic">
+        <input type="hidden" name="_subject" value="New Contact Form - Dr. Lumba Health & Movement">
 
         <button type="submit" class="btn btn-primary">
           Send Message
@@ -172,46 +177,140 @@
   <div class="container">
 
     <div class="section-title">
-
-      <h2>
-        Book Directly
-      </h2>
-
+      <h2>Contact the Team</h2>
       <p>
-        Choose a provider to view booking options and clinic locations.
+        Questions about appointments, clinic locations, or chiropractic care? Reach out directly.
       </p>
-
     </div>
 
     <div class="grid grid-2">
 
       <div class="card provider-card">
 
-        <span class="hero-label">CHIROPRACTOR</span>
-
         <h3>Dr. Lawrence Lumba</h3>
 
+        <div class="provider-tag">
+          Windsor & Tecumseh Chiropractor
+        </div>
+
         <p>
-          Evidence-informed chiropractic care focused on movement quality, recovery, rehabilitation, and long-term resilience.
+          Available at Apex Performance & Wellness and Beacon Physiotherapy.
         </p>
 
-        <a href="lawrence.html" class="btn btn-primary">
-          Book with Lawrence
+        <p>
+          <strong>Email:</strong><br>
+          <a href="mailto:lawrence@drlumba.ca">
+            lawrence@drlumba.ca
+          </a>
+        </p>
+
+        <a href="mailto:lawrence@drlumba.ca" class="btn btn-secondary">
+          Email Lawrence
         </a>
 
       </div>
 
       <div class="card provider-card">
 
-        <span class="hero-label">CHIROPRACTOR</span>
+        <h3>Dr. Alex Lumba</h3>
+
+        <div class="provider-tag">
+          Windsor & Tecumseh Chiropractor
+        </div>
+
+        <p>
+          Available at Victoria Chiropractic & Rehabilitation and Beacon Physiotherapy.
+        </p>
+
+        <p>
+          <strong>Email:</strong><br>
+          <a href="mailto:alex@drlumba.ca">
+            alex@drlumba.ca
+          </a>
+        </p>
+
+        <a href="mailto:alex@drlumba.ca" class="btn btn-secondary">
+          Email Alex
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section>
+
+  <div class="container">
+
+    <div class="section-title">
+      <h2>Book Directly</h2>
+      <p>
+        Choose a provider to view booking options and clinic locations.
+      </p>
+    </div>
+
+    <div class="grid grid-2">
+
+      <div class="card provider-card">
+
+        <span class="hero-label">Chiropractor</span>
+
+        <h3>Dr. Lawrence Lumba</h3>
+
+        <p>
+          Focused on movement quality, injury recovery, rehabilitation, athletic performance, and long-term resilience.
+        </p>
+
+        <a href="lawrence.html" class="btn btn-primary">
+          View Lawrence
+        </a>
+
+      </div>
+
+      <div class="card provider-card">
+
+        <span class="hero-label">Chiropractor</span>
 
         <h3>Dr. Alex Lumba</h3>
 
         <p>
-          Patient-centered chiropractic care focused on mobility, recovery, and evidence-informed treatment.
+          Focused on mobility, recovery, active aging, osteoarthritis, and helping patients move confidently.
         </p>
 
         <a href="alex.html" class="btn btn-primary">
+          View Alex
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section>
+
+  <div class="container">
+
+    <div class="cta-block">
+
+      <h2>Ready to Book?</h2>
+
+      <p>
+        Choose your preferred provider or clinic location and complete your appointment through Jane online booking.
+      </p>
+
+      <div class="hero-buttons" style="justify-content:center;">
+
+        <a href="lawrence.html" class="btn btn-primary">
+          Book with Lawrence
+        </a>
+
+        <a href="alex.html" class="btn btn-secondary">
           Book with Alex
         </a>
 
@@ -224,12 +323,23 @@
 </section>
 
 <footer>
-  © <span id="year"></span> Dr. Lumba Chiropractic | Windsor & Tecumseh
+  © <span id="year"></span> Dr. Lumba Health & Movement
+
+  <br><br>
+
+  Windsor & Tecumseh, Ontario
+
+  <br><br>
+
+  <a href="mailto:lawrence@drlumba.ca">lawrence@drlumba.ca</a>
+  |
+  <a href="mailto:alex@drlumba.ca">alex@drlumba.ca</a>
 </footer>
 
 <script>
-document.getElementById("year").textContent = new Date().getFullYear();
+  document.getElementById("year").textContent = new Date().getFullYear();
 </script>
 
 </body>
 </html>
+```
