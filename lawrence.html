@@ -23,6 +23,47 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="styles.css">
+
+  <!-- Structured Data: Physician -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Physician",
+    "name": "Dr. Lawrence Lumba",
+    "url": "https://www.drlumba.ca/lawrence.html",
+    "image": "https://www.drlumba.ca/8D252B37-9EA6-4A77-B9AA-A6987D901BE3.jpg",
+    "medicalSpecialty": "Chiropractic",
+    "description": "Evidence-informed chiropractic care focused on movement quality, injury recovery, rehabilitation, and athletic performance in Windsor and Tecumseh, Ontario.",
+    "alumniOf": [
+      { "@type": "CollegeOrUniversity", "name": "University of British Columbia" },
+      { "@type": "CollegeOrUniversity", "name": "Canadian Memorial Chiropractic College" }
+    ],
+    "worksFor": [
+      {
+        "@type": "MedicalClinic",
+        "name": "Apex Performance & Wellness",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "4510 Rhodes Dr",
+          "addressLocality": "Windsor",
+          "addressRegion": "ON",
+          "addressCountry": "CA"
+        }
+      },
+      {
+        "@type": "MedicalClinic",
+        "name": "Beacon Physiotherapy",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "1614 Lesperance Rd, Building D3",
+          "addressLocality": "Tecumseh",
+          "addressRegion": "ON",
+          "addressCountry": "CA"
+        }
+      }
+    ]
+  }
+  </script>
 </head>
 
 <body>
@@ -94,6 +135,26 @@
 
     <div class="logo-hero">
       <img src="8D252B37-9EA6-4A77-B9AA-A6987D901BE3.jpg" alt="Dr. Lawrence Lumba Chiropractor in Windsor and Tecumseh">
+    </div>
+
+  </div>
+
+</section>
+
+<!-- BACKGROUND -->
+
+<section>
+
+  <div class="container">
+
+    <div class="section-title left">
+      <h2>Background</h2>
+    </div>
+
+    <div class="card">
+      <p>
+        Originally from Vancouver, BC, Dr. Lawrence Lumba completed his undergraduate degree in Kinesiology at the University of British Columbia before earning his Doctor of Chiropractic at the Canadian Memorial Chiropractic College. That foundation in movement science shapes his approach today &mdash; care built around function, recovery, and helping patients get back to what they enjoy.
+      </p>
     </div>
 
   </div>
