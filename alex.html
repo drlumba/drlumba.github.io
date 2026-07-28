@@ -23,6 +23,47 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="styles.css">
+
+  <!-- Structured Data: Physician -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Physician",
+    "name": "Dr. Alex Lumba",
+    "url": "https://www.drlumba.ca/alex.html",
+    "image": "https://www.drlumba.ca/alex-chiro.jpg",
+    "medicalSpecialty": "Chiropractic",
+    "description": "Evidence-informed chiropractic care focused on mobility, recovery, active aging, and osteoarthritis in Windsor and Tecumseh, Ontario.",
+    "alumniOf": [
+      { "@type": "CollegeOrUniversity", "name": "University of Windsor" },
+      { "@type": "CollegeOrUniversity", "name": "Canadian Memorial Chiropractic College" }
+    ],
+    "worksFor": [
+      {
+        "@type": "MedicalClinic",
+        "name": "Victoria Chiropractic & Rehabilitation",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "248 Erie St W",
+          "addressLocality": "Windsor",
+          "addressRegion": "ON",
+          "addressCountry": "CA"
+        }
+      },
+      {
+        "@type": "MedicalClinic",
+        "name": "Beacon Physiotherapy",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "1614 Lesperance Rd, Building D3",
+          "addressLocality": "Tecumseh",
+          "addressRegion": "ON",
+          "addressCountry": "CA"
+        }
+      }
+    ]
+  }
+  </script>
 </head>
 
 <body>
@@ -94,6 +135,26 @@
 
     <div class="logo-hero">
       <img class="alex-img" src="alex-chiro.jpg" alt="Dr. Alex Lumba Chiropractor in Windsor and Tecumseh">
+    </div>
+
+  </div>
+
+</section>
+
+<!-- BACKGROUND -->
+
+<section>
+
+  <div class="container">
+
+    <div class="section-title left">
+      <h2>Background</h2>
+    </div>
+
+    <div class="card">
+      <p>
+        Dr. Alex Lumba grew up in Tecumseh, ON and studied Human Kinetics at the University of Windsor before completing his Doctor of Chiropractic at the Canadian Memorial Chiropractic College. Now practicing close to home, she brings a patient-centered approach focused on mobility, active aging, and helping people move confidently at every stage of life.
+      </p>
     </div>
 
   </div>
