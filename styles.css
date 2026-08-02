@@ -575,6 +575,21 @@ input[type="submit"]:hover {
   border: 1px solid var(--border);
 }
 
+.provider-tag {
+  display: inline-flex;
+  align-items: center;
+  margin-bottom: 14px;
+  padding: 6px 14px;
+  border-radius: var(--radius-pill);
+  color: var(--primary-gloss);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  background: var(--cream-soft);
+  border: 1px solid var(--border);
+}
+
 .check-list {
   display: grid;
   gap: 12px;
@@ -686,6 +701,14 @@ iframe,
   border: 0;
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-md);
+}
+
+.map-embed {
+  margin: 18px 0;
+}
+
+.map-embed iframe {
+  height: 280px;
 }
 
 /* =========================
